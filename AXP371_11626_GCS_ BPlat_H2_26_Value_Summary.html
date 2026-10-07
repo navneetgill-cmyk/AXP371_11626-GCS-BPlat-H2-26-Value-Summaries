@@ -1,0 +1,1865 @@
+<!-- %%[
+/* For SFMC production: set subject line(s) and preheader here */
+SET @SourceCode                  = [CMPGN_VER_CELL_ID]
+SET @BusinessName                = [PERSONALIZATION_1]
+SET @FirstName                   = [PERSONALIZATION_2]
+SET @EarnedStatementCreditYTD_pzn6= [PERSONALIZATION_6]
+SET @AsOfDate_credits_earned_pzn4= [PERSONALIZATION_4]
+SET @TotalCMPointsInBank_pzn7    = [PERSONALIZATION_7]
+SET @AsOfDate_cmc_pzn12          = [PERSONALIZATION_12]
+SET @MemberSince_pzn30            = [PERSONALIZATION_30]
+
+/* Configure Business Name */
+IF NOT EMPTY(@BusinessName) AND Lowercase(@BusinessName) != "null" AND Length(@BusinessName) >=2 AND Length(@BusinessName) <=20 THEN
+SET @BusinessName = properCase(@BusinessName)
+ELSE
+SET @BusinessName = ""
+ENDIF
+
+/* Configure First Name */
+IF NOT EMPTY(@FirstName) AND Lowercase(@FirstName) != "null" AND Length(@FirstName) >=2 AND Length(@FirstName) <=9 THEN
+SET @FirstName = properCase(@FirstName)
+ELSE
+SET @FirstName = ""
+ENDIF
+
+/* Format EarnedStatementCreditYTD_pzn6 */
+IF lowercase(@EarnedStatementCreditYTD_pzn6) == "null" OR @EarnedStatementCreditYTD_pzn6 == "" OR @EarnedStatementCreditYTD_pzn6 <= 0 THEN
+SET @EarnedStatementCreditYTD_pzn6 = 0
+ELSE
+SET @Formatted_EarnedStatementCreditYTD_pzn6 = FormatNumber(@EarnedStatementCreditYTD_pzn6, "#,###")
+ENDIF
+
+/* Format TotalCMPointsInBank_pzn7*/
+IF lowercase(@TotalCMPointsInBank_pzn7) == "null" OR @TotalCMPointsInBank_pzn7 == "" OR @TotalCMPointsInBank_pzn7 <= 0 THEN
+SET @TotalCMPointsInBank_pzn7 = 0
+ELSE
+SET @Formatted_TotalCMPointsInBank_pzn7 = FormatNumber(@TotalCMPointsInBank_pzn7, "#,###")
+ENDIF
+
+/* Subject Line*/
+IF NOT EMPTY(@FirstName) THEN
+SET @SubjectLine1 = CONCAT(@FirstName,", your Business Platinum Membership just unlocked more value")
+ELSE
+SET @SubjectLine1 = "Your Business Platinum Membership just unlocked more value"
+ENDIF
+/* Preheader*/
+SET @preview = "Introducing Airbnb and Tishman Speyer"
+]%%
+-->
+<!DOCTYPE html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" style="text-size-adjust: 100%; opacity: 1; width: 100% !important; height: 100% important; margin: 0px !important; padding: 0px !important; background-color: #FFFFFF !important;">
+<head>
+<!-- REQUESTED VARIABLES -->
+<!-- SourceCode     = %%CMPGN_VER_CELL_ID%% -->
+<!-- BusinessName_pzn1   = %%PERSONALIZATION_1%% -->
+<!-- FirstName_pzn2      = %%PERSONALIZATION_2%% -->
+<!-- AsOfDate_credits_earned_pzn4    = %%PERSONALIZATION_4%% -->
+<!-- EarnedStatementCreditYTD_pzn6    = %%PERSONALIZATION_6%% -->
+<!-- TotalCMPointsInBank_pzn7    = %%PERSONALIZATION_7%% -->
+<!-- AsOfDate_cmc_pzn12    = %%PERSONALIZATION_12%% -->
+<!-- MemberSince_pzn30    = %%PERSONALIZATION_30%% -->
+</head>
+<head>
+<!-- BEGIN SUBJECT LINE PREVIEW TEXT LOCATION #1 -->
+<title>%%=v(@preview)=%%</title>
+<!-- END SUBJECT LINE PREVIEW TEXT LOCATION #1 -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="IE=edge;" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- version info please do not remove -->
+<meta name="author" content="AMX_GBS Templates 4.2">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+<meta name="x-apple-disable-message-reformatting">
+<link rel="icon" type="image/png" href="https://www.americanexpress.com/favicon.ico" sizes="32x32">
+<!--[if mso]>
+<style type="text/css">
+.hide-in-outlook {display: none; mso-hide: all;}
+.border-fix {border: none !important;}
+a {text-decoration: none !important;}
+</style>
+<xml>
+<o:OfficeDocumentSettings>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<!--[if lte mso 11]>
+<style type="text/css">
+.sp-outlook-group-fix { width: 100% !important; }
+table {
+border-collapse: collapse;
+border-spacing: 0;}
+</style>
+<![endif]-->
+<!--[if gte mso 9]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<style>
+* { margin: 0; padding: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; }
+body { background-color: #E0E0E0; width: 100%; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; mso-hyphenate: none !important; }
+table { mso-table-lspace: 0; mso-table-rspace: 0; }
+.body { word-wrap: normal; word-spacing: normal; }
+/* Font Faces */
+@media screen {
+@font-face {
+font-family: 'Guardian Egyptian';
+font-style: normal;
+font-weight: 400;
+src: url(https://www.aexp-static.com/cdaas/one/statics/axp-static-assets/2.2.0/package/dist/fonts/guardianregular.woff2) format('woff2');
+}
+@font-face {
+font-family: 'BentonSans';
+font-style: normal;
+font-weight: 300;
+src: url(https://www.aexp-static.com/cdaas/one/statics/axp-static-assets/2.15.1/package/dist/fonts/325e6ad0-38fb-4bad-861c-d965eab101d5-3.woff) format('woff');
+}
+}
+div[style*="margin: 16px 0"] {margin: 0 !important;}
+th { font-weight: normal !important; }
+ol, ul { list-style-position: outside; margin-left: 14px; padding: 0; }
+li { display: list-item; text-align: -webkit-match-parent; padding-bottom: 7px; }
+h1, h2, h3, h4{ font-weight: normal; }
+.link:hover { text-decoration: underline !important; }
+/* Button Styles */
+[class^="button"] { transition: all .2s ease-in-out !important; }
+.button-primary-light:hover { background-color: #0061B6 !important; }
+.button-primary-dark:hover { background-color: rgba(255, 255, 255, 0.90) !important; }
+.button-secondary-light:hover { background-color: #F4F4F4 !important; }
+.button-secondary-dark:hover { background-color: rgba(0, 0, 0, 0.05) !important; }
+.button-tertiary:hover { background-color: rgba(0, 0, 0, .05) !important; }
+*:focus {
+outline-color: #006FCF;
+outline-style: solid;
+outline-offset: 4px;
+outline-width: 2px;
+border-radius: 1px;
+}
+.dark-focus:focus {
+outline-color: #00175A;
+outline-style: solid;
+outline-offset: 4px;
+outline-width: 2px;
+border-radius: 1px;
+}
+.img-focus:focus img{
+outline-color: #006FCF;
+outline-style: solid;
+outline-offset: 4px;
+outline-width: 2px;
+border-radius: 1px;
+}
+#MessageViewBody,
+#MessageWebViewDiv {
+min-width: 100vw;
+margin: 0 !important;
+zoom: 1 !important;
+width: 100% !important;
+}
+</style>
+<!-- Link resets -->
+<style>
+a[x-apple-data-detectors] {
+color: inherit !important;
+text-decoration: none !important;
+font-size: inherit !important;
+font-family: inherit !important;
+font-weight: inherit !important;
+line-height: inherit !important;
+}
+#MessageViewBody a {
+color: inherit !important;
+font-size: inherit !important;
+font-family: inherit !important;
+font-weight: inherit !important;
+line-height: inherit !important;
+text-decoration: none !important;
+}
+u+.body a {
+color: inherit;
+text-decoration: none;
+font-size: inherit;
+font-weight: inherit;
+line-height: inherit;
+}
+span.MsoHyperlink {
+color: inherit !important;
+mso-style-priority: 99 !important;
+}
+span.MsoHyperlinkFollowed {
+color: inherit !important;
+mso-style-priority: 99 !important;
+}
+</style>
+<!-- Mobile styles -->
+<style>
+@media only screen and (max-width: 619px) {
+/* Amex v4.2 Classes */
+.full-width-auto {
+width: auto !important;
+display: block !important; }
+.full-width-block,
+.cell-display-mobile {
+width: 100% !important;
+display: block !important; }
+.half-width-block {
+width: 50% !important;
+display: inline-block !important;
+vertical-align:top; }
+.pd10 { padding: 10px !important; }
+.margin0,
+.center-align-table table,
+.center-button table { margin: 0 auto !important; }
+.center-text { text-align: center !important; }
+.ph-text { font-size: 12px !important;
+line-height: 16px !important;
+text-align: center !important;
+padding: 0 !important; }
+.bp-logo {
+width: 45px !important;
+height: 45px !important; }
+.bp-login-button {
+padding: 10px 0 12px !important;
+width: 66px !important; }
+.bp-text {
+font-size: 14px !important;
+line-height: 18px !important; }
+.bp02-card {
+width: 65px !important;
+height: 40px !important; }
+.bp-tagline {
+display: none !important;
+}
+.hb10-card-art-container { height: 147px !important; }
+.hb10-card-art {
+width: auto !important;
+height: 122px !important; }
+.hb-12-headline {
+font-size: 24px !important;
+line-height: 32px !important; }
+.tm12-padding,
+.fm-nav-link {padding: 15px 0 !important; }
+.tm-border { border-top: 1px solid #fff !important; }
+.tm15a-padding { padding: 0 40px !important; }
+.tm-gutter {
+height: 0 !important;
+max-height: 0 !important;
+display: none !important;
+line-height: 0 !important; }
+.tm-heading { clear: left !important; display: block !important; }
+.fm-border { border-top: 1px solid #EFEFEF !important; }
+.fm-cross-container { padding: 33px 0 8px !important; }
+.brandPanel th {
+width: 100% !important;
+display: block !important;
+font-weight: normal !important;
+}
+.fm-tagline {width: 100% !important;}
+.background-grey { background: #ffffff !important; }
+.show-desktop {
+display: none !important;
+font-size: 0 !important;
+max-height: 0 !important;
+line-height: 0 !important;
+mso-hide: all !important;
+}
+.container { padding: 0 !important; width: 100% !important; }
+.wrapper {
+margin: 0 auto;
+width: 100% !important;
+max-width: 619px !important;
+min-width: 310px !important;
+padding: 0 !important; }
+.full-width { width: 100% !important; }
+.mobile_block {
+display: block !important;
+width: 100% !important;
+height: auto !important;
+box-sizing: border-box !important; }
+.height-auto { height: auto !important; }
+.underline-none { text-decoration: none !important; }
+.hero-button { width: 230px !important; }
+.txtleft { text-align: left !important; }
+.left-align{
+text-align: left !important;
+text-align: -webkit-left !important;
+margin-left: auto !important;
+margin-right: auto !important;
+}
+.center-align{
+text-align: center !important;
+text-align: -webkit-center !important;
+margin-left: auto !important;
+margin-right: auto !important;
+}
+.mobile-off {
+display: none !important;
+height: 0px !important;
+width: 0px !important;
+}
+.mobile-on,
+.mobile-display-block { display: block !important; }
+.mobile-show { display: inline !important; }
+.pd0 { padding: 0 !important; }
+.pd20 { padding: 20px !important; }
+.pd40 { padding: 40px !important; }
+.pdbtm0 { padding-bottom: 0px !important; }
+.pdbtm10 { padding-bottom: 10px !important; }
+.padding-btm-10 { padding-bottom: 10px !important; }
+.padding-btm-16 { padding-bottom: 16px !important; }
+.padding-btm-20 { padding-bottom: 20px !important; }
+.pdbtm30 { padding-bottom: 30px !important; }
+.padding-btm-40 { padding-bottom: 40px !important; }
+.pdtop0 { padding-top: 0px !important; }
+.pdtop10 { padding-top: 10px !important; }
+.pdtop20 { padding-top: 20px !important; }
+.pdtop30 { padding-top: 30px !important; }
+.pdtop40 { padding-top: 40px !important; }
+.pdtop50 { padding-top: 50px !important; }
+.padr0 { padding-right: 0px !important; }
+.padr10 { padding-right: 10px !important; }
+.padr20 { padding-right: 20px !important; }
+.padr40 { padding-right: 40px !important; }
+.padl0 { padding-left: 0px !important; }
+.padl10 { padding-left: 10px !important; }
+.padl20 { padding-left: 20px !important; }
+.padl40 { padding-left: 40px !important; }
+.padlr10 { padding-left: 10px !important; padding-right: 10px !important; }
+.padlr20 { padding-left: 20px !important; padding-right: 20px !important; }
+.padlr30 { padding-left: 30px !important; padding-right: 30px !important; }
+.padlr40 { padding-left: 40px !important; padding-right: 40px !important; }
+.mobpad { padding-left: 40px !important; padding-right: 40px !important; }
+.spacer-40 { font-size: 40px !important; height: 40px !important; line-height: 40px !important; }
+.section-inner-diver {
+width: 50% !important;
+white-space: normal !important; }
+.mob-line-height {
+font-size: 30px !important;
+line-height: 30px !important;
+text-align: center !important; }
+.mob-width-135{
+display: block !important;
+width: 135px !important;
+height: auto !important;
+box-sizing: border-box !important;
+}
+}
+</style>
+<!--[if gte mso 16]>
+<style>
+.keep-white {
+mso-style-textfill-type:gradient;
+mso-style-textfill-fill-gradientfill-stoplist:"0 \#FFFFFF 0 100000\,100000 \#FFFFFF 0 100000";
+color:#000000 !important;
+}
+</style>
+<![endif]-->
+</head>
+<body style="margin: 0 auto !important;padding:0;background:#E0E0E0;" class="body">
+<!-- SAMSUNG EMAIL MARGIN FIX (insert below opening BODY tag) -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 0 auto !important;">
+<tr>
+<td>
+<div align="center">
+<!-- SAMSUNG EMAIL MARGIN FIX (insert below opening BODY tag) -->
+<!-- BEGIN SUBJECT LINE PREVIEW TEXT LOCATION #2 -->
+<div style="max-width:0px; max-height:0px; display:none; overflow:hidden; font-family:Arial; font-size:0px; line-height:0px; color:#FFFFFF; opacity:0; mso-hide:all;">
+%%=v(@preview)=%%
+</div>
+<!-- END SUBJECT LINE PREVIEW TEXT LOCATION #2 -->
+<!-- REQUIRED: SFMC TRACKING PIXEL, DO NOT REMOVE -->
+<div style="display:none;">
+<custom name="opencounter" type="tracking" />
+</div>
+<!-- REQUIRED: SFMC TRACKING PIXEL, DO NOT REMOVE -->
+<div role="article" aria-roledescription="email" aria-label="Email from American Express" lang="en" dir="ltr" style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: normal; font-size: 15px; line-height: 22px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#E0E0E0;">
+<tr>
+<td align="center">
+<!-- HEADER SECTION: BEGINS -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td align="center" background="Images/wsp-grey.png" bgcolor="#E0E0E0">
+<!-- START: EMAIL HEADER CONTAINER -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="620" style="width: 620px;" class="container">
+<tr>
+<td>
+<!-- Preheader and Brand Panel start here -->
+%%=ContentBlockByName("Shared Content\Templates\2022_v4.0\Business\HTML_bus_header")=%%
+<!-- Preheader and Brand Panel end here -->
+</td>
+</tr>
+</table>
+<!-- END: EMAIL HEADER CONTAINER -->
+</td>
+</tr>
+</table>
+<!-- HEADER SECTION: ENDS -->
+<!-- START: EMAIL CONTENT CONTAINER -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="620" style="width:620px;border: 0px; background:#ECEDEE;" class="container">
+<tr>
+<td>
+<!-- Hero Banner and Content Modules Start here -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border: 0px;">
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FFFFFF" style="border: 0px; background-color: #FFFFFF;">
+<!-- START - HERO SECTION -->
+<tr>
+<td align="center" valign="top" style=" padding: 10px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#404347" style="border: 0px; background-color: #404347;">
+<tr>
+<td align="center" valign="top" style=" padding: 10px 0;" class="padlr20">
+<h1 style="margin: 0; font-family: 'BentonSans-Bold', Helvetica Neue, Helvetica, Arial, sans-serif; color: #ffffff; font-size: 15px;  mso-line-height-rule: exactly; line-height: 22px; font-weight: 700; text-transform: uppercase; mso-hyphenate: none;">
+BUSINESS PLATINUM BENEFIT SUMMARY
+</h1>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" style=" padding: 0 10px 10px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#EBECEB" style="border: 0px; background-color: #EBECEB;">
+<tr>
+<td align="center" valign="top" style=" padding: 30px 40px;" class="padlr30">
+<h2 style="margin: 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 26px;  mso-line-height-rule: exactly; line-height: 36px; font-weight: 400;mso-hyphenate: none;">
+<!-- %%[IF NOT EMPTY(@FirstName) THEN]%% -->
+<span style="margin: 0; font-family: 'BentonSans-Medium', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 26px;  mso-line-height-rule: exactly; line-height: 36px; font-weight: 500;mso-hyphenate: none;"><strong>%%=v(@FirstName)=%%</strong></span>, we've added new value to your Business Platinum&nbsp;Card<span style="font-size: 16px; vertical-align: 8px; line-height: 16px;">&reg;</span>
+<!-- %%[ELSE]%% -->
+We've added new travel value to your Business Platinum&nbsp;Card<span style="font-size: 16px; vertical-align: 8px; line-height: 16px;">&reg;</span>
+<!-- %%[ENDIF]%% -->
+
+</h2>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" style=" padding: 0 10px;">
+<!--[if !mso]><!-->
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_hero_m_V1.gif" alt="Hotel lounge area near pool, American Express Business Platinum Card" width="0" height="0" border="0" style="border: 0px; width: 0px; height: 0; display: none;" class="mobile_block"/>
+<!--<![endif]-->
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_hero_d_V1.gif" alt="Hotel lounge area near pool, American Express Business Platinum Card" width="600" height="218" border="0" style="border: 0px; width: 600px; height: 218px; display: block;" class="mobile-off"/>
+</td>
+</tr>
+<!-- END - HERO SECTION -->
+<!-- START SECTION 1 : AMEX-AIRBNB -->
+<tr>
+<td align="center" valign="top">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border: 0px;">
+<tbody>
+<tr>
+<td align="center" valign="top" style=" padding: 20px 40px 0;">
+<h2 style="margin:0;">
+<span style="margin: 0; font-family: 'BentonSans-Bold', Helvetica Neue, Helvetica, Arial, sans-serif; color: #006FCF; font-size: 15px;  mso-line-height-rule: exactly; line-height: 22px; font-weight: 700; text-transform: uppercase; mso-hyphenate: none;">NOW INTRODUCING</span><br>
+<span style="margin: 6px 0 0 0; font-family: 'BentonSans', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 24px; mso-line-height-rule: exactly; line-height: 34px; font-weight: 400;mso-hyphenate: none;">A New Chapter in Travel With&nbsp;Airbnb</span>
+</h2>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" style=" padding-top: 20px;">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_airbnb.png" alt="American Express, Airbnb" width="218" border="0" style="border: 0px; width: 218px; display: block;"/>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" style=" padding-top: 30px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border: 0px;">
+<tbody>
+<tr>
+<th align="center" valign="top" style="padding: 0; font-weight: normal;" class="mobile_block">
+<table  width="310" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border: 0px; width: 310px;" class="full-width">
+<tbody>
+<tr>
+<td align="center" valign="top" style=" padding: 0 5px 0 10px;" class=" mobile_block padlr10">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#EBECEB" style="border: 0px; background-color: #EBECEB;">
+<tbody>
+<tr>
+<td align="center" valign="top">
+<!--[if !mso]><!-->
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_5x_m.png" alt="Updated, coworkers lounging by pool" width="0" height="0" border="0" style="border: 0px; width: 0px; height: 0; display: none;" class="mobile_block"/>
+<!--<![endif]-->
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_5x_d.png" alt="Updated, coworkers lounging by pool" width="295" border="0" style="border: 0px; width: 295px; display: block;" class="mobile-off"/>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding: 16px 16px 16px 14px;">
+<h3 style="margin: 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #000000; font-size: 16px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400;mso-hyphenate: none;">
+<span style="margin: 0; font-family: 'BentonSans-Bold', Helvetica Neue, Helvetica, Arial, sans-serif; color: #000000; font-size: 16px;  mso-line-height-rule: exactly; line-height: 22px; font-weight: 700; text-transform: uppercase; mso-hyphenate: none;">5X</span> Membership Rewards<span style="font-size: 10px; vertical-align: 4px; line-height: 10px;">&reg;</span> Points
+</h3>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding: 0px 16px 56px 14px;" class="padding-btm-16">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 20px; color: #000000; mso-hyphenate: none;">You now earn 5X Membership Rewards<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&reg;</span> points on flights, prepaid hotels, and prepaid short-term rental bookings with Airbnb, through <a href="https://m.amex/HMmF5x?extlink=us-em-bplat-octvalsum-5X" aria-label="Opens to new page to view AmexTravel.com" target="_blank" style=" color: #006FCF; display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel App<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">TM</span>.*
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</th>
+<th align="center" valign="top" style="padding: 0; font-weight: normal;" class="mobile_block pdtop10">
+<table  width="310" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border: 0px; width: 310px;" class="full-width">
+<tbody>
+<tr>
+<td align="center" valign="top" style=" padding: 0 10px 0 5px;" class="mobile_block padlr10">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#EBECEB" style="border: 0px; background-color: #EBECEB;">
+<tbody>
+<tr>
+<td align="center" valign="top">
+<!--[if !mso]><!-->
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_lodging_m.png" alt="Updated, man standing outside of hotel" width="0" height="0" border="0" style="border: 0px; width: 0px; height: 0; display: none;" class="mobile_block"/>
+<!--<![endif]-->
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_lodging_d.png" alt="Updated, man standing outside of hotel" width="295" border="0" style="border: 0px; width: 295px; display: block;" class="mobile-off"/>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding: 16px 16px 16px 14px;">
+<h3 style="margin: 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #000000; font-size: 16px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400;mso-hyphenate: none;">
+<span style="margin: 0; font-family: 'BentonSans-Bold', Helvetica Neue, Helvetica, Arial, sans-serif; color: #000000; font-size: 16px;  mso-line-height-rule: exactly; line-height: 22px; font-weight: 700; text-transform: uppercase; mso-hyphenate: none;">$600</span> Lodging Credit
+</h3>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding: 0px 16px 16px 14px;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 20px; color: #000000; mso-hyphenate: none;">Get up to <strong>$300 in statement credits</strong> <br class="mobile-off">semi-annually on prepaid Fine Hotels + Resorts<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&reg;</span> and The Hotel Collection <br class="mobile-off">bookings, and prepaid Airbnb Luxe<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&dagger;</span> bookings with <strong>Airbnb</strong>, made through <a href="https://m.amex/VQqKyD?extlink=us-em-bplat-octvalsum-lodgingcredit" aria-label="Opens to new page to view AmexTravel.com" target="_blank" style=" color: #006FCF; display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel App<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">TM</span> with your Card.*
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" style=" padding-top: 10px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border: 0px;" class="full-width">
+<tbody>
+<tr>
+<td align="center" valign="top" style=" padding: 0 10px;" class=" mobile_block">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#EBECEB" style="border: 0px; background-color: #EBECEB;">
+<tbody>
+<tr>
+<td align="center" valign="top">
+<!--[if !mso]><!-->
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_airbnb_m.png" alt="New, group of people learning to make pizza" width="0" height="0" border="0" style="border: 0px; width: 0px; height: 0; display: none;" class="mobile_block"/>
+<!--<![endif]-->
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_airbnb_d_V1.png" alt="New, group of people learning to make pizza" width="600" border="0" style="border: 0px; width: 600px; display: block;" class="mobile-off"/>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding: 16px 16px 16px 14px;">
+<h3 style="margin: 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #000000; font-size: 16px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400;mso-hyphenate: none;">
+<span style="margin: 0; font-family: 'BentonSans-Bold', Helvetica Neue, Helvetica, Arial, sans-serif; color: #000000; font-size: 16px;  mso-line-height-rule: exactly; line-height: 22px; font-weight: 700; text-transform: uppercase; mso-hyphenate: none;">$250</span> Airbnb Experiences Credit
+</h3>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding: 0px 16px 16px 14px;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 20px; color: #000000; mso-hyphenate: none;">Get up to <strong>$250 in statement credits</strong> with Airbnb Experiences. First, use your Business Platinum Card to book a prepaid Airbnb Luxe stay with Airbnb through <a href="https://m.amex/2k8G32?extlink=us-em-bplat-octvalsum-e&scredit" aria-label="Opens to new page to view AmexTravel.com" target="_blank" style=" color: #006FCF; display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel App<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">TM</span> each year. Once the booking is confirmed, get up to $250 in statement credits through the remainder of that calendar year after you use your Card to purchase an eligible Airbnb Experience<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&dagger;&dagger;</span> directly with Airbnb.*
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" style="padding: 30px 0;">
+<table width="230" role="presentation" cellpadding="0" cellspacing="0" border="0" bgcolor="#006FCF" style=" width: 230px; border: 0px;">
+<tr>
+<td width="230" height="44" style="color: #FFFFFF; width: 230px; height: 44px; text-align: center; " class="button-tertiary">
+<p style="color: #FFFFFF; font-size: 15px; mso-line-height-alt: 16px; line-height: 22px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; Margin: 0;">
+<a href="https://m.amex/4w9jtN?extlink=us-em-bplat-octvalsum-airbnbhero" aria-label="Opens to new page to find out more about Airbnb Experiences Credit" target="_blank" style="color: #FFFFFF; text-decoration: none; white-space: nowrap; padding: 11px 0; mso-padding-alt: 10px 0; width: 230px; display: inline-block;">
+Find Out More
+</a>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border: 0px;" class="full-width">
+<tbody>
+<tr>
+<td align="center" valign="top" style=" padding: 0 10px;" class=" mobile_block">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#EBECEB" style="border: 0px; background-color: #EBECEB;">
+<tbody>
+<tr>
+<td align="center" valign="top" style=" padding: 20px 24px 0;">
+<h3 style="margin: 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #000000; font-size: 18px; mso-line-height-rule: exactly; line-height: 26px; font-weight: 400;mso-hyphenate: none;">
+Discover how your Card unlocks value with Airbnb and Airbnb Luxe
+</h3>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" style=" padding: 20px 30px;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400; color: #000000; mso-hyphenate: none;">Exceptional private homes in sought-after destinations around the world, each selected by Airbnb for its quality, design and distinctive setting. From city residences to private island escapes, Airbnb Luxe offers extraordinary stays for unforgettable trips.
+</p>
+<p style="margin: 20px 0 0 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; mso-line-height-rule: exactly; line-height: 16px; font-weight: 400; color: #000000; mso-hyphenate: none;">
+<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&dagger;</span> The Hotel Collection and Airbnb Luxe bookings require a minimum two-night stay. Effective Jan&zwnj;uary&nbsp;1,&nbsp;20&zwnj;27, Fine Hotels + Resorts<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&reg;</span> bookings will require a minimum two-night stay to be eligible for the $600 Lodging Credit.
+</p>
+<p style="margin: 20px 0 0 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; mso-line-height-rule: exactly; line-height: 16px; font-weight: 400; color: #000000; mso-hyphenate: none;">
+<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&dagger;&dagger;</span> Certain Experience bookings direct you from Airbnb to a third-party partner platform to make the purchase (for example, live event tickets) and are not eligible.
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- END SECTION 1 : AMEX-AIRBNB -->
+<!-- START SECTION 2 : ZO -->
+<tr>
+<td align="center" valign="top">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border: 0px;">
+<tbody>
+<tr>
+<td align="center" valign="top" style="padding: 30px 0;">
+<h2 style="margin: 0; font-family: 'BentonSans-Bold', Helvetica Neue, Helvetica, Arial, sans-serif; color: #006FCF; font-size: 15px;  mso-line-height-rule: exactly; line-height: 22px; font-weight: 700; text-transform: uppercase; mso-hyphenate: none;">YOUR WORKSPACE, ELEVATED
+</h2>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" style=" padding: 0 10px;" >
+<table width="100%" height="624" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border: 0px; height: 624px;" class="height-auto">
+<tbody>
+<tr>
+<td align="center" valign="top" class="mobile_block">
+<table width="290" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border: 0px; width: 290px;" class="full-width">
+<tbody>
+<tr>
+<td align="center" valign="top" style=" padding: 0 4px 0 0px;" class="padr0 mobile_block">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border: 0px;">
+<tbody>
+<tr>
+<td align="center" valign="top">
+<!--[if !mso]><!-->
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_zo_m.png" alt="New, 320 N Sangamon ZO lounge Chicago Illinois, man serving woman at a bar" width="0" height="0" border="0" style="border: 0px; width: 0px; height: 0; display: none;" class="mobile_block" />
+<!--<![endif]-->
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_zo_d_V2.png" alt="New, 320 N Sangamon ZO lounge Chicago Illinois, man serving woman at a bar" width="286" height="624" border="0" style="border: 0px; width: 286px; height: 624px; display: block;" class="mobile-off" />
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align="center" valign="top" class="mobile_block pdtop10">
+<table width="310" height="624" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border: 0px; width: 310px; height: 624px;" class="full-width height-auto">
+<tbody>
+<tr>
+<td align="center" valign="top" style=" padding: 0 0px 0 6px;" class="mobile_block padl0">
+<table width="100%" height="624" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#EBECEB" style="border: 0px; background-color: #EBECEB; height: 624px;" class="height-auto">
+<tbody>
+<tr>
+<td valign="top" style=" padding: 20px 0 0 20px;">
+<!--[if !mso]><!-->
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_zo_logo.png" alt="ZO by Tishman Speyer" width="0" height="0" border="0" style="border: 0px; width: 0px; height: 0; display: none;" class="mob-width-135" />
+<!--<![endif]-->
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_zo_logo.png" alt="ZO by Tishman Speyer" width="176" height="78" border="0" style="border: 0px; width: 176px; height: 78px; display: block;" class="mobile-off" />
+</td>
+</tr>
+<tr>
+<td valign="top" style="mso-padding-alt: 18px 20px 20px; padding: 15px 20px 20px;">
+<h3 style="margin: 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #000000; font-size: 18px; mso-line-height-rule: exactly; line-height: 28px; font-weight: 400;mso-hyphenate: none;">Introducing Your
+<span style="margin: 0; font-family: 'BentonSans-Medium', Helvetica Neue, Helvetica, Arial, sans-serif; color: #000000; font-size: 18px;  mso-line-height-rule: exactly; line-height: 28px; font-weight: 600; mso-hyphenate: none;"><strong>American Express<span style="font-size: 10px; vertical-align: 6px; line-height: 10px;">&reg;</span> ZO&nbsp;Membership</strong></span>
+</h3>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding: 0px 20px;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none;">With your Business Platinum Card, receive a complimentary American Express<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&reg;</span> ZO Membership from Tishman Speyer, which includes: </p>
+<p style="margin: 20px 0 0 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none;"><strong>Access to ZO locations</strong> in select U.S. cities with 4 guest passes per
+<br class="mobile-off">week.* </p>
+<p style="margin: 16px 0 0 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none;"><strong>4 complimentary day passes</strong> per month at U.S. Studio locations. </p>
+<p style="margin: 16px 0 0 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none;"><strong>Up to $500 in statement credits</strong> per calendar year toward event space bookings and/or a Dining Club membership.* </p>
+</tr>
+<tr>
+<td style="padding: 30px 0 20px 20px;">
+<table width="230" role="presentation" cellpadding="0" cellspacing="0" border="0" bgcolor="#006FCF" style=" width: 230px; border: 0px;">
+<tr>
+<td width="230" height="44" style="color: #FFFFFF; width: 230px; height: 44px; text-align: center; " class="button-tertiary">
+<p style="color: #FFFFFF; font-size: 15px; mso-line-height-alt: 16px; line-height: 22px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; Margin: 0;">
+<a href="https://m.amex/zwj6FZ?extlink=us-em-bplat-octvalsum-zo" aria-label="Opens to new page to discover ZO" target="_blank" style="color: #FFFFFF; text-decoration: none; white-space: nowrap; padding: 11px 0; mso-padding-alt: 10px 0; width: 230px; display: inline-block;">
+Discover ZO
+</a>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- END SECTION 2 : ZO -->
+<!-- START SECTION 3 : MEMBERSHIP CENTER -->
+<tr>
+<td align="center" valign="top" style=" padding: 30px 10px 10px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#404347" style="border: 0px; background-color: #404347;">
+<tbody>
+<tr>
+<td colspan="2" align="center"valign="top" style=" padding: 10px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FFFFFF" style="border: 0px; background-color: #FFFFFF;">
+<tbody>
+<tr>
+<td align="center" valign="top" style=" padding-top: 30px;">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_membersince.png" alt="Member Since" width="150" border="0" style="border: 0px; width: 150px;  display: block;"/>
+</td>
+</tr>
+<!-- %%[IF NOT EMPTY(@MemberSince_pzn30) THEN]%% -->
+<tr>
+<td align="center" valign="top">
+<p style="margin: 0; font-family: 'BentonSans-Medium', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 15px;  mso-line-height-rule: exactly; line-height: 22px; font-weight: 500; mso-hyphenate: none;">%%=v(@MemberSince_pzn30)=%%</p>
+</td>
+</tr>
+<!-- %%[ELSE]%% -->
+<!-- %%[ENDIF]%% -->
+<tr>
+<td align="center" valign="top" style=" padding: 20px 20px 0;">
+<h2 style="margin: 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 24px;  mso-line-height-rule: exactly; line-height: 32px; font-weight: 400; mso-hyphenate: none;">
+<!-- %%[IF NOT EMPTY(@BusinessName) THEN]%% -->
+<strong>%%=v(@BusinessName)=%%'s</strong> Membership&nbsp;Center
+<!-- %%[ELSE]%% -->
+Your Membership&nbsp;Center
+<!-- %%[ENDIF]%% -->
+</h2>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" style=" padding: 20px 20px 30px;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none; font-weight: 400;">As your business evolves, so does the way your Business Platinum Card works to support you. Take a look at how you've been earning with your Card this year, and how to make the most of your benefits.
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" style=" padding: 0 5px 0px 10px;" class="mobile_block padlr10">
+<table width="285" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FFFFFF" style="border: 0px; background-color: #FFFFFF; width: 285px;" class="full-width">
+<tbody>
+<!-- %%[IF @EarnedStatementCreditYTD_pzn6>0 AND NOT EMPTY(@AsOfDate_credits_earned_pzn4) THEN]%% -->
+<tr>
+<td valign="top" style=" padding: 30px 30px 0 20px;">
+<h3 style="margin: 0; font-family: 'BentonSans-Medium', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 36px; mso-line-height-rule: exactly; line-height: 34px; font-weight: 500; mso-hyphenate: none;">
+<span style="font-size: 24px; vertical-align: 10px; line-height: 20px;">$</span>%%=v(@Formatted_EarnedStatementCreditYTD_pzn6)=%%
+</h3>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding: 10px 20px 0;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none; font-weight: 400;">
+earned from your statement credit benefits this year
+</p>
+<p style="margin: 10px 0 0 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; mso-line-height-rule: exactly; line-height: 16px; color: #000000; mso-hyphenate: none; font-weight: 400;">
+as of %%=v(@AsOfDate_credits_earned_pzn4)=%%
+</p>
+</td>
+</tr>
+<tr>
+<td style="padding: 64px 0 20px 20px;" class="pdtop30">
+<p style="color: #006FCF; font-size: 15px; mso-line-height-alt: 16px; line-height: 22px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif;  Margin: 0;">
+<a href="https://m.amex/mT63PX" aria-label="Opens to new page to view account" target="_blank" style="color: #006FCF; white-space: nowrap; display: inline-block;">
+<u>View Account</u>
+</a>
+</p>
+</td>
+</tr>
+<!-- %%[ELSE]%% -->
+<tr>
+<td valign="top" style=" padding: 20px 30px 1px 20px;">
+<h3 style="margin: 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 18px; mso-line-height-rule: exactly; line-height: 24px; font-weight: 400; mso-hyphenate: none;">
+<span style="margin: 0; font-family: 'BentonSans-Bold', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 18px;  mso-line-height-rule: exactly; line-height: 24px; font-weight: 700; mso-hyphenate: none;">See how</span> you’ve been <br class="mobile-off">earning
+</h3>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding: 10px 20px 0;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none; font-weight: 400;">
+Whether it's upgrading technology, planning business travel, or anything in between, ensure you're earning to your Card's full potential.
+</p>
+</td>
+</tr>
+<tr>
+<td style="padding: 40px 0 20px 20px;" class="pdtop30">
+<p style="color: #006FCF; font-size: 15px; mso-line-height-alt: 16px; line-height: 22px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif;  Margin: 0;">
+<a href="https://m.amex/mT63PX" aria-label="Opens to new page to view account" target="_blank" style="color: #006FCF; white-space: nowrap; display: inline-block;">
+<u>View Account</u>
+</a>
+</p>
+</td>
+</tr>
+<!-- %%[ENDIF]%% -->
+</tbody>
+</table>
+</td>
+<td align="center" valign="top" style=" padding: 0 10px 0px 5px;" class="mobile_block padlr10 pdtop10">
+<table width="285" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FFFFFF" style="border: 0px; background-color: #FFFFFF; width: 285px;" class="full-width">
+<tbody>
+<!-- %%[IF @TotalCMPointsInBank_pzn7>0 AND NOT EMPTY(@AsOfDate_cmc_pzn12) THEN]%% -->
+<tr>
+<td valign="top" style=" padding: 30px 30px 0 20px;">
+<h3 style="margin: 0; font-family: 'BentonSans-Medium', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 36px; mso-line-height-rule: exactly; line-height: 34px; font-weight: 500; mso-hyphenate: none;">
+%%=v(@Formatted_TotalCMPointsInBank_pzn7)=%%
+</h3>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding: 10px 20px 0;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none; font-weight: 400;">
+Membership Rewards points available*
+</p>
+<p style="margin: 10px 0 0 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; mso-line-height-rule: exactly; line-height: 16px; color: #000000; mso-hyphenate: none; font-weight: 400;">
+as of %%=v(@AsOfDate_cmc_pzn12)=%%
+</p>
+</td>
+</tr>
+<tr>
+<td style="padding: 64px 0 20px 20px;" class="pdtop30">
+<p style="color: #006FCF; font-size: 15px; mso-line-height-alt: 16px; line-height: 22px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif;  Margin: 0;">
+<a href="https://m.amex/6Sy8jn" aria-label="Opens to new page to view ways to redeem" target="_blank" style="color: #006FCF; white-space: nowrap; display: inline-block;">
+<u>View Ways to Redeem</u>
+</a>
+</p>
+</td>
+</tr>
+<!-- %%[ELSE]%% -->
+<tr>
+<td valign="top" style=" padding: 20px 20px 1px 20px;">
+<h3 style="margin: 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 18px; mso-line-height-rule: exactly; line-height: 24px; font-weight: 400; mso-hyphenate: none;">
+<span style="margin: 0; font-family: 'BentonSans-Bold', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 18px;  mso-line-height-rule: exactly; line-height: 24px; font-weight: 700; mso-hyphenate: none;">Log in</span> to view available Membership Rewards points
+</h3>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding: 10px 20px 0;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none; font-weight: 400;">
+Use points to help fuel your business.*
+</p>
+</td>
+</tr>
+<tr>
+<td style="padding: 84px 0 20px 20px;" class="pdtop30">
+<p style="color: #006FCF; font-size: 15px; mso-line-height-alt: 16px; line-height: 22px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif;  Margin: 0;">
+<a href="https://m.amex/xfrG6m" aria-label="Opens to new page to view available points" target="_blank" style="color: #006FCF; white-space: nowrap; display: inline-block;">
+<u>View Available Points</u>
+</a>
+</p>
+</td>
+</tr>
+<!-- %%[ENDIF]%% -->
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top" style=" padding: 30px;">
+<!-- %%[IF  @SourceCode=="A0000J04AJ" OR @SourceCode=="A0000J04AF" OR @SourceCode=="A0000J04AK" OR @SourceCode=="A0000J04AH" THEN]%% -->
+<h2 style="margin: 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #FFFFFF; font-size: 26px;  mso-line-height-rule: exactly; line-height: 34px; font-weight: 400; mso-hyphenate: none;">Top Recommended Benefit</h2>
+<p style="margin: 10px 0 0 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #FFFFFF; mso-hyphenate: none; font-weight: 700;">Based on your previous spending:</p>
+<!-- %%[ELSEIF @SourceCode=="A0000J04AE" OR @SourceCode=="A0000J04AN" THEN]%% -->
+<h2 style="margin: 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #FFFFFF; font-size: 26px;  mso-line-height-rule: exactly; line-height: 34px; font-weight: 400; mso-hyphenate: none;">You've Unlocked Additional Value This Year</h2>
+<!-- %%[ELSE]%% -->
+<h2 style="margin: 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #FFFFFF; font-size: 26px;  mso-line-height-rule: exactly; line-height: 34px; font-weight: 400; mso-hyphenate: none;">Top Business Benefit</h2>
+<!-- %%[ENDIF]%% -->
+</td>
+</tr>
+<!-- START SECTION : EARNED TRAVEL VALUE -->
+<!-- %%[IF @SourceCode=="A0000J04AE" OR @SourceCode=="A0000J04AN" THEN]%% -->
+<tr>
+<td colspan="2" valign="top" style="padding: 0 10px 10px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" role="presentation" style="background-color: #FFFFFF;">
+<tr>
+<td align="center" valign="top" style=" padding: 20px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+<tr>
+<td valign="top" class="mobile_block">
+<table width="240" border="0" cellpadding="0" cellspacing="0" role="presentation" style=" border: 0; width: 240px;" class="full-width">
+<tr>
+<td valign="top" width="140" style="width: 140px;">
+<table width="140" border="0" bgcolor="#006FCF" cellpadding="0" cellspacing="0" role="presentation" style="border:0; width: 140px; background-color: #006FCF;">
+<tr>
+<td align="center" valign="top" style="padding-top: 2px;mso-padding-top-alt:0px;">
+<h3 style="margin: 0;">
+<span style="margin: 0; vertical-align:bottom; font-family: 'BentonSans-Bold', Helvetica Neue, Helvetica, Arial, sans-serif; color: #FFFFFF; font-size: 14px;  mso-line-height-rule: exactly; line-height: 28px; font-weight: 700; mso-hyphenate: none;">UNLOCKED UP TO
+</span>
+</h3>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding-top: 10px;">
+<h3 style="margin: 0;">
+<span style="margin: 0; font-family: 'BentonSans-Medium', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 36px;  mso-line-height-rule: exactly; line-height: 40px; font-weight: 500; mso-hyphenate: none;"><span style="font-size: 20px; vertical-align: 12px; line-height: 20px;">$</span>3,600
+</span><br>
+<span style="margin: 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #000000; font-size: 20px;  mso-line-height-rule: exactly; line-height: 28px; font-weight: 400; mso-hyphenate: none;">in travel and business value
+</span>
+</h3>
+</td>
+</tr>
+</table>
+</td>
+<td valign="top" style="padding-left: 10px;" class="mobile_block padl0 pdtop20">
+<table width="290" border="0" cellpadding="0" cellspacing="0" bgcolor="#EBECEB" role="presentation" style=" border: 0px; width: 290px; background-color: #EBECEB;" class="full-width">
+<tr>
+<td align="center" valign="top" style=" padding: 10px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border:0px;">
+<tr>
+<td valign="top">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_airplane_oneap.png" alt="" width="24" border="0" style="border: 0px; width: 24px;  display: block; padding-top: 6px;"/>
+</td>
+<td valign="top" style=" padding-left: 6px;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none; font-weight: 400;"><strong>Up to $1,200 in statement credits</strong> on flights booked on <a href="https://www.americanexpress.com/en-us/travel" aria-label="Opens to new page to view AmexTravel.com" target="_blank" style=" color: #006FCF; display: inline-block;"><u>AmexTravel.com</u></a>*<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&#9826;</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding-top: 20px;">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_statement_oneap.png" alt="" width="22" border="0" style="border: 0px; width: 22px;  display: block; padding-top: 6px;"/>
+</td>
+<td valign="top" style=" padding: 20px 0 0 6px;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none; font-weight: 400;"><strong>Up to $2,400 in statement credits</strong> on American Express One AP<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&reg;</span> monthly fees.*<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&#9826;&#9826;</span></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top" class="pdtop30">
+<table width="230" role="presentation" cellpadding="0" cellspacing="0" border="0" style=" width: 230px; border: 0px;">
+<tr>
+<td width="226" height="40" style="color: #006FCF; width: 226px; height: 40px; text-align: center; border: 2px solid #006FCF; " class="button-tertiary">
+<p style="color: #006FCF; font-size: 15px; mso-line-height-alt: 16px; line-height: 22px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; Margin: 0;">
+<a href="https://m.amex/pFsZfh?extlink=us-em-bplat-octvalsum-earnedvalue" aria-label="Opens to new page to explore now" target="_blank" style="color: #006FCF; text-decoration: none; white-space: nowrap; padding: 11px 0; mso-padding-alt: 10px 0; width: 230px; display: inline-block;">
+Explore Now
+</a>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top" style=" padding-top: 20px;">
+<p style="margin:0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; mso-line-height-rule: exactly; line-height: 16px; font-weight: 400; color: #000000; mso-hyphenate: none;">
+<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&#9826;</span> Statement credits valid from Ja&zwnj;nuary&nbsp;1 through De&zwnj;cember&nbsp;3&zwnj;1 of the calendar year after the calendar year in which you spend $250,000 on eligible purchases on your Business Platinum Card.
+</p>
+<p style="margin:20px 0 0 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; mso-line-height-rule: exactly; line-height: 16px; font-weight: 400; color: #000000; mso-hyphenate: none;">
+<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&#9826;&#9826;</span> Monthly fees include an auto-renewing platform access fee, transaction fees based on One AP usage, and applicable taxes. Statement credits valid from Ja&zwnj;nuary&nbsp;1 through De&zwnj;cember&nbsp;3&zwnj;1 of the calendar year after the calendar year in which you spend $250,000 on eligible purchases on your Business Platinum Card.
+</p>
+</td>
+</tr>
+</table>
+</td>
+
+</tr>
+</table>
+</td>
+</tr>
+<!-- END SECTION : EARNED TRAVEL VALUE -->
+<!-- START SECTION : DELL STATEMENT CREDIT -->
+<!-- %%[ELSEIF @SourceCode=="A0000J04AJ" THEN]%% -->
+<tr>
+<td colspan="2" valign="top" style="padding: 0 10px 10px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+<tr>
+<td valign="top">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" role="presentation" style="background-color: #FFFFFF;">
+<tr>
+<td valign="top" style="padding: 20px 20px 0 20px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+<tr>
+<th valign="top" style="padding: 0; font-weight: normal;" class="mobile_block">
+<table width="250" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 250px;" class="full-width">
+<tr>
+<td valign="top" width="136" style=" width: 136px;">
+<table width="136" border="0" bgcolor="#006FCF" cellpadding="0" cellspacing="0" role="presentation" style="border:0; width: 136px; background-color: #006FCF;">
+<tr>
+<td align="center" valign="top" style="padding-top: 2px;mso-padding-top-alt:0px;">
+<h3 style=" vertical-align:bottom;margin: 0px; font-family: 'BentonSans-Bold', Helvetica Neue, Helvetica, Arial, sans-serif; color: #FFFFFF; font-size: 14px;  mso-line-height-rule: exactly; line-height: 28px; font-weight: 700; mso-hyphenate: none;">DON'T MISS OUT</h3>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!--[if !mso]><!-->
+<tr>
+<td colspan="2" class="mobile_block" valign="top" style="padding: 10px 0px 0px; display: none;">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_dell.png" alt="Dell Technologies" width="230" border="0" style="border: 0px; width: 230px;  display: none;" class="mobile-display-block"/>
+</td>
+</tr>
+<!--<![endif]-->
+<!--[if !mso]><!-->
+<tr>
+<td colspan="2" class="mobile_block" style="padding-bottom: 20px; display: none;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="106" style="border: 0px; width: 106px;" role="presentation">
+<tr>
+<td align="center" width="106" valign="top" style="border-bottom:1px solid #404347; font-size: 0px; line-height: 0px; padding-top: 20px;  width: 106px;">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+<!--<![endif]-->
+<tr>
+<td align="left" colspan="2" valign="top" style="padding-top: 10px; color: #404347;" class="pdtop0">
+<h3 style="margin: 0;">
+<span style="margin: 0; font-family: 'BentonSans-Medium', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 36px;  mso-line-height-rule: exactly; line-height: 40px; font-weight: 500; mso-hyphenate: none;">Up to <span style="font-size: 20px; vertical-align: 12px; line-height: 20px;">$</span>1,150</span><br>
+<span style="margin: 6px 0 0 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #000000; font-size: 20px;  mso-line-height-rule: exactly; line-height: 28px; font-weight: 400; mso-hyphenate: none;">Dell Credits</span>
+</h3>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" style="padding: 0; font-weight: normal;" class="mobile_block">
+<table width="290" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 290px;" class="full-width">
+<tr class="mobile-off">
+<td valign="top" style="padding: 0 0 0px 30px;">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_dell.png" alt="Dell Technologies" width="230" border="0" style="display: block; width: 230px;" />
+</td>
+</tr>
+<tr class="mobile-off">
+<td align="left" valign="top" style="padding: 0 0 20px 30px; font-size: 0px; line-height: 0px;">
+<table border="0" cellpadding="0" cellspacing="0" width="106" style="border: 0px; width: 106px;" role="presentation">
+<tr>
+<td align="center" width="106" valign="top" style="border-bottom:1px solid #404347;  font-size: 0px; line-height: 0px; padding-top: 20px; width: 106px;"> &nbsp; </td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left" class="padl0 pdtop20" valign="top" style="padding-left: 30px; color: #404347;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none; font-weight: 400;">
+Get <strong>up to $150 in statement credits</strong> on U.S. purchases directly with Dell Technologies on your Business Platinum Card and <strong>an additional $1,000 statement credit after you spend $5,000 or more</strong> on those purchases, per calendar year. Enrollment required.*
+</p>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style="padding: 0px 0 20px 20px;" class="pdtop30">
+<table width="230" role="presentation" cellpadding="0" cellspacing="0" border="0" style=" width: 230px; border: 0px;">
+<tr>
+<td width="226" height="40" style="color: #006FCF; width: 226px; height: 40px; text-align: center; border: 2px solid #006FCF; " class="button-tertiary">
+<p style="color: #006FCF; font-size: 15px; mso-line-height-alt: 16px; line-height: 22px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; Margin: 0;">
+<a href="https://m.amex/qHNXy4" aria-label="Opens to new page to see details about the Dell Technologies credit" target="_blank" style="color: #006FCF; text-decoration: none; white-space: nowrap; padding: 11px 0; mso-padding-alt: 10px 0; width: 230px; display: inline-block;">
+See Details
+</a>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END SECTION : DELL STATEMENT CREDIT -->
+<!-- START SECTION : INDEED STATEMENT CREDIT -->
+<!-- %%[ELSEIF @SourceCode=="A0000J04AF" THEN]%% -->
+<tr>
+<td colspan="2" valign="top" style="padding: 0 10px 10px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+<tr>
+<td valign="top">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" role="presentation" style="background-color: #FFFFFF;">
+<tr>
+<td valign="top" style="padding: 20px 20px 0 20px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+<tr>
+<th valign="top" style="padding: 0; font-weight: normal;" class="mobile_block">
+<table width="250" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 250px;" class="full-width">
+<tr>
+<td valign="top" width="136" style="border:0; width: 136px;">
+<table width="136" border="0" bgcolor="#006FCF" cellpadding="0" cellspacing="0" role="presentation" style="border:0; width: 136px; background-color: #006FCF;">
+<tr>
+<td align="center" valign="top" style="mso-padding-top-alt:0px; padding-top: 2px;">
+<h3 style=" vertical-align:bottom; margin: 0px; font-family: 'BentonSans-Bold', Helvetica Neue, Helvetica, Arial, sans-serif; color: #FFFFFF; font-size: 14px;  mso-line-height-rule: exactly; line-height: 28px; font-weight: 700; mso-hyphenate: none;">DON'T MISS OUT</h3>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!--[if !mso]><!-->
+<tr>
+<td colspan="2" class="mobile_block" valign="top" style="padding: 10px 0px 0px; display: none;">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_indeed.png" alt="Indeed" width="132" border="0" style="border: 0px; width: 132px;  display: none;" class="mobile-display-block"/>
+</td>
+</tr>
+<!--<![endif]-->
+<!--[if !mso]><!-->
+<tr>
+<td colspan="2" class="mobile_block" style="padding-bottom: 20px; display: none;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="106" style="border: 0px; width: 106px;" role="presentation">
+<tr>
+<td align="center" width="106" valign="top" style="border-bottom:1px solid #404347; font-size: 0px; line-height: 0px; padding-top: 20px;  width: 106px;">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+<!--<![endif]-->
+<tr>
+<td align="left" colspan="2" valign="top" style="padding-top: 10px; color: #404347;" class="pdtop0">
+<h3 style="margin: 0;">
+<span style="margin: 0; font-family: 'BentonSans-Medium', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 36px;  mso-line-height-rule: exactly; line-height: 40px; font-weight: 500; mso-hyphenate: none;">Up to <span style="font-size: 20px; vertical-align: 12px; line-height: 20px;">$</span>360</span><br>
+<span style="margin: 6px 0 0 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #000000; font-size: 20px;  mso-line-height-rule: exactly; line-height: 28px; font-weight: 400; mso-hyphenate: none;">per calendar year <br class="mobile-off">Indeed Credit</span>
+</h3>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" style="padding: 0; font-weight: normal;" class="mobile_block">
+<table width="290" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 290px;" class="full-width">
+<tr class="mobile-off">
+<td valign="top" style="padding: 0 0 0px 30px;">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_indeed.png" alt="Indeed" width="132" border="0" style="display: block; width: 132px;" />
+</td>
+</tr>
+<tr class="mobile-off">
+<td align="left" valign="top" style="padding: 0 0 20px 30px; font-size: 0px; line-height: 0px;">
+<table border="0" cellpadding="0" cellspacing="0" width="106" style="border: 0px; width: 106px;" role="presentation">
+<tr>
+<td align="center" width="106" valign="top" style="border-bottom:1px solid #404347;  font-size: 0px; line-height: 0px; padding-top: 20px; width: 106px;"> &nbsp; </td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left" class="padl0 pdtop20" valign="top" style="padding-left: 30px; color: #404347;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none; font-weight: 400;">
+Get <strong>up to $90 in statement credits</strong> quarterly for purchases with Indeed on your Business Platinum Card. That's up to $360 back per year. Enrollment required.*
+</p>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style="padding: 0px 0 20px 20px;" class="pdtop30">
+<table width="230" role="presentation" cellpadding="0" cellspacing="0" border="0" style=" width: 230px; border: 0px;">
+<tr>
+<td width="226" height="40" style="color: #006FCF; width: 226px; height: 40px; text-align: center; border: 2px solid #006FCF; " class="button-tertiary">
+<p style="color: #006FCF; font-size: 15px; mso-line-height-alt: 16px; line-height: 22px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; Margin: 0;">
+<a href="https://m.amex/Y7NC4m" aria-label="Opens to new page to see details about the Indeed credit" target="_blank" style="color: #006FCF; text-decoration: none; white-space: nowrap; padding: 11px 0; mso-padding-alt: 10px 0; width: 230px; display: inline-block;">
+See Details
+</a>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END SECTION : INDEED STATEMENT CREDIT  -->
+<!-- START SECTION : WIRELESS CREDIT -->
+<!-- %%[ELSEIF @SourceCode=="A0000J04AK" THEN]%% -->
+<tr>
+<td colspan="2" valign="top" style="padding: 0 10px 10px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+<tr>
+<td valign="top">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" role="presentation" style="background-color: #FFFFFF;">
+<tr>
+<td valign="top" style="padding: 20px 20px 0 20px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+<tr>
+<th valign="top" style="padding: 0; font-weight: normal;" class="mobile_block">
+<table width="250" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 250px;" class="full-width">
+<tr>
+<td valign="top" width="136" style=" width: 136px;">
+<table width="136" border="0" bgcolor="#006FCF" cellpadding="0" cellspacing="0" role="presentation" style="border:0; width: 136px; background-color: #006FCF;">
+<tr>
+<td align="center" valign="top" style="mso-padding-top-alt:0px; padding-top: 2px;">
+<h3 style=" vertical-align:bottom; margin: 0; font-family: 'BentonSans-Bold', Helvetica Neue, Helvetica, Arial, sans-serif; color: #FFFFFF; font-size: 14px;  mso-line-height-rule: exactly; line-height: 28px; font-weight: 700; mso-hyphenate: none;">DON'T MISS OUT</h3>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!--[if !mso]><!-->
+<tr>
+<td colspan="2" class="mobile_block" valign="top" style="padding: 10px 0px 0px; display: none;">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_wirelesscredit.png" alt="Wireless credit, phone" width="260" border="0" style="border: 0px; width: 260px;  display: none;" class="mobile-display-block"/>
+</td>
+</tr>
+<!--<![endif]-->
+<!--[if !mso]><!-->
+<tr>
+<td colspan="2" class="mobile_block" style="padding-bottom: 20px; display: none;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="106" style="border: 0px; width: 106px;" role="presentation">
+<tr>
+<td align="center" width="106" valign="top" style="border-bottom:1px solid #404347; font-size: 0px; line-height: 0px; padding-top: 20px;  width: 106px;">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+<!--<![endif]-->
+<tr>
+<td align="left" colspan="2" valign="top" style="padding-top: 10px; color: #404347;" class="pdtop0">
+<h3 style="margin: 0;">
+<span style="margin: 0; font-family: 'BentonSans-Medium', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 36px;  mso-line-height-rule: exactly; line-height: 40px; font-weight: 500; mso-hyphenate: none;"><span style="font-size: 20px; vertical-align: 12px; line-height: 20px;">$</span>120</span><br>
+<span style="margin: 6px 0 0 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #000000; font-size: 20px;  mso-line-height-rule: exactly; line-height: 28px; font-weight: 400; mso-hyphenate: none;">Wireless Credit</span>
+</h3>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" style="padding: 0; font-weight: normal;" class="mobile_block">
+<table width="290" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 290px;" class="full-width">
+<tr class="mobile-off">
+<td valign="top" style="padding: 0 0 0px 30px;">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_wirelesscredit.png" alt="Wireless credit, phone" width="260" border="0" style="display: block; width: 260px;" />
+</td>
+</tr>
+<tr class="mobile-off">
+<td align="left" valign="top" style="padding: 0 0 20px 30px; font-size: 0px; line-height: 0px;">
+<table border="0" cellpadding="0" cellspacing="0" width="106" style="border: 0px; width: 106px;" role="presentation">
+<tr>
+<td align="center" width="106" valign="top" style="border-bottom:1px solid #404347;  font-size: 0px; line-height: 0px; padding-top: 20px; width: 106px;"> &nbsp; </td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left" class="padl0 pdtop20" valign="top" style="padding-left: 30px; color: #404347;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none; font-weight: 400;">
+Make calls while making <strong>up to $120 in statement credits</strong> per year (up to $10 back per month) for wireless telephone service purchases made directly with a wireless provider in the U.S. on the Business Platinum Card. Enrollment is required.<span style="font-size: 8px; vertical-align: 6px; line-height: 8px;">&#8225;</span>*
+</p>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style="padding: 0px 0 20px 20px;" class="pdtop30">
+<table width="230" role="presentation" cellpadding="0" cellspacing="0" border="0" style=" width: 230px; border: 0px;">
+<tr>
+<td width="226" height="40" style="color: #006FCF; width: 226px; height: 40px; text-align: center; border: 2px solid #006FCF; " class="button-tertiary">
+<p style="color: #006FCF; font-size: 15px; mso-line-height-alt: 16px; line-height: 22px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; Margin: 0;">
+<a href="https://m.amex/hhxnLx" aria-label="Opens to new page to see details about the Wireless credit" target="_blank" style="color: #006FCF; text-decoration: none; white-space: nowrap; padding: 11px 0; mso-padding-alt: 10px 0; width: 230px; display: inline-block;">
+See Details
+</a>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding: 0 0 20px 20px;">
+<p style="margin:0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; mso-line-height-rule: exactly; line-height: 16px; font-weight: 400; color: #000000; mso-hyphenate: none;">
+<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&#8225;</span> <strong>Effective Fe&zwnj;bruary&nbsp;1&zwnj;7,&nbsp;20&zwnj;27</strong>, select merchants only. See terms.
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END SECTION : WIRELESS CREDIT  -->
+<!-- START SECTION : ADOBE CREDIT -->
+<!-- %%[ELSEIF @SourceCode=="A0000J04AH" THEN]%% -->
+<tr>
+<td colspan="2" valign="top" style="padding: 0 10px 10px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+<tr>
+<td valign="top">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" role="presentation" style="background-color: #FFFFFF;">
+<tr>
+<td valign="top" style="padding: 20px 20px 0 20px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+<tr>
+<th valign="top" style="padding: 0; font-weight: normal;" class="mobile_block">
+<table width="250" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 250px;" class="full-width">
+<tr>
+<td valign="top" width="136" style="border:0; width: 136px;">
+<table width="136" border="0" bgcolor="#006FCF" cellpadding="0" cellspacing="0" role="presentation" style="border:0; width: 136px; background-color: #006FCF;">
+<tr>
+<td align="center" valign="top" style="mso-padding-top-alt:0px; padding-top: 2px;">
+<h3 style=" vertical-align:bottom; margin: 0; font-family: 'BentonSans-Bold', Helvetica Neue, Helvetica, Arial, sans-serif; color: #FFFFFF; font-size: 14px;  mso-line-height-rule: exactly; line-height: 28px; font-weight: 700; mso-hyphenate: none;">DON'T MISS OUT</h3>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!--[if !mso]><!-->
+<tr>
+<td colspan="2" class="mobile_block" valign="top" style="padding: 10px 0px 0px; display: none;">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_adobe.png" alt="Adobe" width="146" border="0" style="border: 0px; width: 146px;  display: none;" class="mobile-display-block"/>
+</td>
+</tr>
+<!--<![endif]-->
+<!--[if !mso]><!-->
+<tr>
+<td colspan="2" class="mobile_block" style="padding-bottom: 20px; display: none;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="106" style="border: 0px; width: 106px;" role="presentation">
+<tr>
+<td align="center" width="106" valign="top" style="border-bottom:1px solid #404347; font-size: 0px; line-height: 0px; padding-top: 20px;  width: 106px;">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+<!--<![endif]-->
+<tr>
+<td align="left" colspan="2" valign="top" style="padding-top: 10px; color: #404347;" class="pdtop0">
+<h3 style="margin: 0;">
+<span style="margin: 0; font-family: 'BentonSans-Medium', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 36px;  mso-line-height-rule: exactly; line-height: 40px; font-weight: 500; mso-hyphenate: none;"><span style="font-size: 20px; vertical-align: 12px; line-height: 20px;">$</span>250</span><br>
+<span style="margin: 6px 0 0 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #000000; font-size: 20px;  mso-line-height-rule: exactly; line-height: 28px; font-weight: 400; mso-hyphenate: none;">Adobe Credit</span>
+</h3>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" style="padding: 0; font-weight: normal;" class="mobile_block">
+<table width="290" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 290px;" class="full-width">
+<tr class="mobile-off">
+<td valign="top" style="padding: 0 0 0px 30px;">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_adobe.png" alt="Adobe" width="146" border="0" style="display: block; width: 146px;" />
+</td>
+</tr>
+<tr class="mobile-off">
+<td align="left" valign="top" style="padding: 0 0 20px 30px; font-size: 0px; line-height: 0px;">
+<table border="0" cellpadding="0" cellspacing="0" width="106" style="border: 0px; width: 106px;" role="presentation">
+<tr>
+<td align="center" width="106" valign="top" style="border-bottom:1px solid #404347;  font-size: 0px; line-height: 0px; padding-top: 20px; width: 106px;"> &nbsp; </td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left" class="padl0 pdtop20" valign="top" style="padding-left: 30px; color: #404347;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none; font-weight: 400;">
+Enjoy a <strong>$250 statement credit</strong> per calendar year after you spend $600 or more on U.S. purchases directly with Adobe in a calendar year. Enrollment required.*
+</p>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style="padding: 0px 0 20px 20px;" class="pdtop30 padr20">
+<table width="230" role="presentation" cellpadding="0" cellspacing="0" border="0" style=" width: 230px; border: 0px;">
+<tr>
+<td width="226" height="40" style="color: #006FCF; width: 226px; height: 40px; text-align: center; border: 2px solid #006FCF; " class="button-tertiary">
+<p style="color: #006FCF; font-size: 15px; mso-line-height-alt: 16px; line-height: 22px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; Margin: 0;">
+<a href="https://m.amex/zp8LmS" aria-label="Opens to new page to see details about the Adobe credit" target="_blank" style="color: #006FCF; text-decoration: none; white-space: nowrap; padding: 11px 0; mso-padding-alt: 10px 0; width: 230px; display: inline-block;">
+See Details
+</a>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END SECTION : ADOBE CREDIT  -->
+<!-- START SECTION : CHAT GPT -->
+<!-- %%[ELSE]%% -->
+<tr>
+<td colspan="2" valign="top" style="padding: 0 10px 10px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+<tr>
+<td valign="top">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" role="presentation" style="background-color: #FFFFFF;">
+<tr>
+<td valign="top" style="padding: 20px 20px 0 20px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+<tr>
+<th valign="top" style="padding: 0; font-weight: normal;" class="mobile_block">
+<table width="240" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 240px;" class="full-width">
+<!--[if !mso]><!-->
+<tr>
+<td colspan="2" class="mobile_block" valign="top" style="padding: 0px; display: none;">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_chatgpt.png" alt="ChatGPT business" width="270" border="0" style="border: 0px; width: 270px;  display: none;" class="mobile-display-block"/>
+</td>
+</tr>
+<!--<![endif]-->
+<!--[if !mso]><!-->
+<tr>
+<td colspan="2" class="mobile_block" style="padding-bottom: 20px; display: none;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="106" style="border: 0px; width: 106px;" role="presentation">
+<tr>
+<td align="center" width="106" valign="top" style="border-bottom:1px solid #404347; font-size: 0px; line-height: 0px; padding-top: 20px;  width: 106px;"> &nbsp; </td>
+</tr>
+</table>
+</td>
+</tr>
+<!--<![endif]-->
+<tr>
+<td align="left" colspan="2" valign="top" style="padding-top: 10px; color: #404347;" class="pdtop0">
+<h3 style="margin: 0;">
+<span style="margin: 0; font-family: 'BentonSans-Medium', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 36px;  mso-line-height-rule: exactly; line-height: 40px; font-weight: 500; mso-hyphenate: none;"><span style="font-size: 20px; vertical-align: 12px; line-height: 20px;">$</span>300</span><br>
+<span style="margin: 6px 0 0 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #000000; font-size: 20px;  mso-line-height-rule: exactly; line-height: 28px; font-weight: 400; mso-hyphenate: none;">
+ChatGPT Business Credit</span>
+</h3>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" style="padding: 0; font-weight: normal;" class="mobile_block">
+<table width="300" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 300px;" class="full-width">
+<tr class="mobile-off">
+<td valign="top" style="padding: 0 0 0px 30px;">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_chatgpt.png" alt="ChatGPT business" width="270" border="0" style="display: block; width: 270px;" />
+</td>
+</tr>
+<tr class="mobile-off">
+<td align="left" valign="top" style="padding: 0 0 20px 30px; font-size: 0px; line-height: 0px;">
+<table border="0" cellpadding="0" cellspacing="0" width="106" style="border: 0px; width: 106px;" role="presentation">
+<tr>
+<td align="center" width="106" valign="top" style="border-bottom:1px solid #404347;  font-size: 0px; line-height: 0px; padding-top: 20px; width: 106px;"> &nbsp; </td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left" class="padl0 pdtop20" valign="top" style="padding-left: 30px; color: #404347;">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #000000; mso-hyphenate: none; font-weight: 400;">
+Start using ChatGPT Business for work — with a shared workspace, admin controls, and connectors to your company tools. Get <strong>up to $300 in statement credits</strong> per calendar year on U.S. purchases of ChatGPT Business<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&#8225;</span> on your Business Platinum Card. Enrollment required.*
+</p>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style="padding: 0px 0 20px 20px;" class="pdtop30">
+<table width="230" role="presentation" cellpadding="0" cellspacing="0" border="0" style=" width: 230px; border: 0px;">
+<tr>
+<td width="226" height="40" style="color: #006FCF; width: 226px; height: 40px; text-align: center; border: 2px solid #006FCF; " class="button-tertiary">
+<p style="color: #006FCF; font-size: 15px; mso-line-height-alt: 16px; line-height: 22px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; Margin: 0;">
+<a href="https://m.amex/GRy6c1" aria-label="Opens to new page to view all benefits" target="_blank" style="color: #006FCF; text-decoration: none; white-space: nowrap; padding: 11px 0; mso-padding-alt: 10px 0; width: 230px; display: inline-block;">
+View All Benefits
+</a>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding: 0 0 20px 20px;">
+<p style="margin:0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; mso-line-height-rule: exactly; line-height: 16px; font-weight: 400; color: #000000; mso-hyphenate: none;">
+<span style="font-size: 8px; vertical-align: 4px; line-height: 8px;">&#8225;</span> Subject to auto-renewal.
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- %%[ENDIF]%% -->
+<!-- END SECTION : CHAT GPT -->
+</tbody>
+</table>
+</td>
+</tr>
+<!-- END SECTION 3 : MEMBERSHIP CENTER -->
+<!-- START SECTION : VIRTUAL CARDS -->
+<tr>
+<td align="center" valign="top" style=" padding: 0 10px 10px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border: 0px;">
+<tbody>
+<tr>
+<!--[if !mso]><!-->
+<td valign="top" style="padding: 10px; display: none;" class="mobile_block">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#EBECEB" role="presentation" style="background-color: #EBECEB; border: 0px;" class="full-width">
+<tbody>
+<tr>
+<td align="center" valign="top">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_vc_m.gif" alt="Phone showing the process of adding a virtual card as a payment method" width="0" height="0" border="0" style="border: 0px; width: 0px; height: 0; display: none;" class="mobile_block"/>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<!--<![endif]-->
+<td valign="top" class="mobile_block">
+<table width="405" border="0" cellpadding="0" cellspacing="0" bgcolor="#404347" role="presentation" style="background-color: #404347; width: 405px; border: 0px;" class="full-width">
+<tbody>
+<tr>
+<td valign="top" style=" padding: 40px 30px 0px;" class="center-align">
+<h2 style="margin: 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #FFFFFF; font-size: 22px;  mso-line-height-rule: exactly; line-height: 28px; font-weight: 400; mso-hyphenate: none;">Get Added Security With <span style="margin: 0; font-family: 'BentonSans-Bold', Helvetica Neue, Helvetica, Arial, sans-serif; color: #FFFFFF; font-size: 22px;  mso-line-height-rule: exactly; line-height: 28px; font-weight: 700; mso-hyphenate: none;">Virtual&nbsp;Cards</span>
+</h2>
+</td>
+</tr>
+<tr>
+<td valign="top" style=" padding: 20px 30px 0;" class="center-align">
+<p style="margin: 0; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 22px; color: #FFFFFF; mso-hyphenate: none; font-weight: 400;">
+Take advantage of added security with unique digital Card numbers that help protect your Business Card details. Terms apply.*
+</p>
+</td>
+</tr>
+<tr>
+<td style="padding: 30px 0 30px 30px; mso-padding-alt: 32px 0 30px 30px;" class="pdtop30 padl0 center-align">
+<table width="230" role="presentation" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style=" width: 230px; border: 0px; background-color: #FFFFFF;">
+<tr>
+<td width="226" height="40" style="color: #006FCF; width: 226px; height: 40px; text-align: center; border: 2px solid #006FCF; " class="button-tertiary">
+<p style="color: #006FCF; font-size: 15px; mso-line-height-alt: 16px; line-height: 22px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; Margin: 0;">
+<a href="https://m.amex/PrgMjG?extlink=us-em-bplat-octvalsum-virtualcard" aria-label="Opens to new page to learn more" target="_blank" style="color: #006FCF; text-decoration: none; white-space: nowrap; padding: 11px 0; mso-padding-alt: 10px 0; width: 230px; display: inline-block;">
+Learn More
+</a>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td valign="top" style="padding-left: 10px;" class="mobile-off">
+<table width="185" border="0" cellpadding="0" cellspacing="0" bgcolor="#EBECEB" role="presentation" style="background-color: #EBECEB; width: 185px; border: 0px;" class="full-width">
+<tbody>
+<tr>
+<td align="center" valign="top" style="padding: 10px 0;">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_vc_d.gif" alt="Phone showing the process of adding a virtual card as a payment method" width="166" height="270" border="0" style="border: 0px; width: 166px; height: 270px; display: block;" class="mobile-off"/>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- END SECTION : VIRTUAL CARDS -->
+<!-- START OUTRO SECTION -->
+<tr>
+<td align="center" valign="top" style=" padding: 0 10px 10px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#EBECEB" style="border: 0px; background-color: #EBECEB;">
+<tbody>
+<tr>
+<td align="center" valign="top" style=" padding-top: 30px;">
+<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/axp371_11626_bp_americanexpress.png" alt="American Express" width="150" border="0" style="border: 0px; width: 150px;  display: block;"/>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" style=" padding: 20px 92px 30px;" class="padlr30">
+<h2 style="margin: 0; font-family: 'BentonSans-Book', Helvetica Neue, Helvetica, Arial, sans-serif; color: #404347; font-size: 24px;  mso-line-height-rule: exactly; line-height: 34px; font-weight: 400; mso-hyphenate: none;">Thank You for Being a Valued Business Platinum Card&nbsp;Member</h2>
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" style=" padding: 0 10px 10px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#404347" style="border: 0px; background-color: #404347;">
+<tr>
+<td align="center" valign="top" style=" padding: 10px 0;" class="padlr20">
+<h1 style="margin: 0; font-family: 'BentonSans-Bold', Helvetica Neue, Helvetica, Arial, sans-serif; color: #ffffff; font-size: 15px;  mso-line-height-rule: exactly; line-height: 22px; font-weight: 700; text-transform: uppercase; mso-hyphenate: none;">
+WE'RE PROUD TO SUPPORT YOUR&nbsp;BUSINESS
+</h1>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END OUTRO SECTION -->
+</table>
+</td>
+</tr>
+</table>
+<!--START: ID=FM04-v4.0 Terms and Conditions -->
+<table class="mobile_block" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" role="presentation">
+<tr>
+<td align="center">
+%%=ContentBlockByName("Shared Content\Templates\2022_v4.0\Business\HTML_bus_footer")=%%
+</td>
+</tr>
+</table>
+<table class="mobile_block" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#E0E0E0" style="background:#e0e0e0;" role="presentation">
+<tr>
+<td valign="top" align="left" style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 18px; color: #3D3D3D; padding: 16px 10px 10px 16px; cursor: auto; word-break: break-word;">
+%%=ContentBlockByName("Shared Content\Templates\2022_v4.0\HTML_disclosure")=%%
+</td>
+</tr>
+</table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" bgcolor="#E0E0E0" class="full-width" width="100%" style="background:#e0e0e0;">
+<tr>
+<td style="padding: 16px 20px; color: #3D3D3D; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; word-break: normal;">
+<h2 style="margin-bottom: 20px; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">* Terms and Conditions</h2>
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">5X Membership Rewards Points on Flights and Prepaid Lodging Booked Through AmexTravel.com or the Amex Travel App&trade;</h3>
+<p style=" margin: 0;">Basic Card Members will get 1 Membership Rewards&reg; point for each dollar charged for eligible purchases on their Business Platinum Card&reg; or on an Employee Card on their Card Account.
+<br><br>
+Basic Card Members will earn 4 additional points (for a total of 5 Membership Rewards points or 5x points) for each dollar charged for eligible air and lodging bookings on any Card on the Account, minus cancellations and credits.  Eligible air and lodging bookings are limited to bookings of: (i) air tickets on scheduled flights booked through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel App&trade;; (ii) prepaid hotel reservations booked through American Express Travel (through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a>, the Amex Travel App&trade;, or by calling the phone number on the back of the eligible Card); and (iii) prepaid short-term rental reservations booked with Airbnb through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel App&trade;. To complete a short-term rental reservation with Airbnb through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel App&trade;, the eligible Card Member must have an Airbnb account linked to their American Express online account. Eligible air and lodging bookings do not include: charter flights, private jet flights, flights that are part of tours, cruises, or travel packages, scheduled flights booked over the phone, ticketing or similar service fees, ticket cancellation or change fees, property fees or similar fees, hotel group reservations or events, insurance fees, interest charges, or purchases of cash equivalents. Eligible prepaid hotel bookings that are modified directly with the hotel will not be eligible for additional points. Additional fees and purchases associated with your prepaid short-term rental booking will not be eligible for additional points (e.g., pool heating fees or pet fees).
+<br><br>
+Bonuses that may be received with your Card on other purchase categories or in connection with promotions or offers from American Express cannot be combined with this benefit. Purchases eligible for multiple additional point bonuses will only receive the highest individual eligible bonus. Any portion of a charge that the Basic Card Member elects to cover through redemption of Membership Rewards points is not eligible to receive points. Additional terms and restrictions apply. Please allow up to 12 weeks after the qualifying purchase is charged to your Card Account for Membership Rewards points to be posted to the account.
+<br><br>
+Merchants are assigned codes based on what they primarily sell. We group certain merchant codes into categories that are eligible for additional points. A purchase with a merchant will not earn additional points if the merchant’s code is not included in an additional points category. You may not receive additional points if we receive inaccurate information or are otherwise unable to identify your purchase as eligible for an additional points category. For example, you may not receive additional points when: a merchant uses a third-party to sell their products or services, a merchant uses a third-party to process or submit your transaction to us (e.g., using mobile or wireless card readers), or you choose to make a purchase using a third-party payment account or make a purchase using a mobile or digital wallet.
+<br><br>
+To be eligible for this benefit, Card Account(s) must not be cancelled or past due at the time of additional point fulfillment. If American Express, in its sole discretion, determines that you have engaged in or intend to engage in any manner of abuse, misuse, or gaming in connection with this benefit in any way, American Express may remove access to this benefit from the Account.
+<br><br>
+For additional information, call the number on the back of the Card or visit <a href="https://www.americanexpress.com/en-us/benefits/rewards/rewards-information/index.html" style="text-decoration: underline; color: #005DAE;display: inline;"><u>americanexpress.com/&zwnj;rewards-info</u></a> for more information about rewards.
+</p>
+<br>
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">$600 Lodging Credit</h3>
+<p style=" margin: 0;">Effective Ja&zwnj;nuary&nbsp;1,&nbsp;2027, Fine Hotels + Resorts&reg; bookings will require a minimum two-night stay to be eligible for the $600 Lodging Credit.
+<br><br>
+Basic Card Members on U.S. Business Platinum Card Accounts (“Card Account”) are eligible to receive up to $300 in statement credits semi-annually (January to June, and July to December) for up to a total of $600 in statement credits per calendar year, when they or Employee Business Platinum Card Members on the Card Account use their Cards to pay for new prepaid Fine Hotels + Resorts&reg; and The Hotel Collection bookings made through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a>, the Amex Travel App&trade;, or by calling the phone number on the back of the eligible Card and new prepaid Airbnb Luxe bookings with Airbnb made through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel App&trade;; or when Employee Business Expense Card Members on the Card Account pay for new prepaid bookings for The Hotel Collection made through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a>, the Amex Travel App&trade;, or by calling the phone number of the back of the eligible Card, and new prepaid Airbnb Luxe bookings with Airbnb made through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel App&trade;. Bookings of The Hotel Collection and Airbnb Luxe properties require a minimum stay of two consecutive nights to receive statement credits. To complete an Airbnb Luxe booking with Airbnb made through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel App&trade;, the eligible Card Member must have an Airbnb account linked to their American Express online account. Prepaid bookings are referred to as “Pay Now” on <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a> and the Amex Travel App&trade;. Purchases by both the Basic Card Member and any Employee Card Members on the Card Account are eligible for statement credits. However, the total amount of statement credits for eligible purchases will not exceed $600 per calendar year, per Card Account. Eligible bookings do not include interest charges, cancellation fees, property fees or other similar fees, or any charges by a property to you (whether for your booking, your stay or otherwise).
+<br><br>
+Statement credits are typically received within a few days, however it may take 90 days after an eligible prepaid hotel or Airbnb Luxe booking is charged to the Card Account. Eligible bookings must be processed before June 30th, 11:59PM Central Time, to be eligible for statement credits within the January to June benefit period, and December 31st, 11:59PM Central Time, to be eligible for statement credits within the July to December benefit period. American Express relies on the merchant’s processing of transactions to determine the transaction date. If there is a delay in the merchant submitting the transaction to us or if the merchant uses another date as the transaction date, then your purchase may not earn the statement credit benefit for the benefit period in which you made the purchase. For example, if an eligible purchase is made on December 31st but the merchant processes the transaction such that it is identified to us as occurring on January 1st, then the statement credit available in the next eligibility calendar year benefit period will be applied, if available. If you have transferred to a different Card at the time the merchant submits the transaction, you may not receive the statement credit. Statement credit(s) may not be received or may be reversed if the booking is refunded, cancelled, or modified. If the Card Account is cancelled or past due, it may not qualify to receive a statement credit. If American Express does not receive information that identifies your transaction as eligible, you will not receive the statement credits. For example, your transaction will not be eligible if it is a booking: (i) made with a property not included in the Fine Hotels + Resorts or The Hotel Collection programs, (ii) made with an Airbnb property not included in the Airbnb Luxe program, (iii) made outside of American Express Travel, or (iv) made with an ineligible Card. Participating properties and their availability are subject to change. If American Express, in its sole discretion, determines that you have engaged in or intend to engage in any manner of abuse, misuse, or gaming in connection with this benefit, American Express will not have an obligation to provide, and may reverse, any statement credits provided to you. If a charge for an eligible purchase is included in a Pay Over Time balance on your Card Account, the statement credit associated with that charge may not be applied to that Pay Over Time balance. Instead, the statement credit may be applied to your Pay In Full balance. For additional information, call the number on the back of your Card. Please refer to <a href="https://www.americanexpress.com/en-us/travel/offers/hotels/luxury-hotel-offers" style="text-decoration: underline; color: #005DAE;display: inline;"><u>AmericanExpress.com/FHR</u></a> and <a href="https://www.americanexpress.com/en-us/travel/the-hotel-collection/book/" style="text-decoration: underline; color: #005DAE;display: inline;"><u>AmericanExpress.com/HC</u></a> for more information about Fine Hotels + Resorts and The Hotel Collection, respectively.
+</p>
+<br>
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">$250 Experiences and Services Credit</h3>
+<p style=" margin: 0;">
+Basic Card Members on U.S. Consumer Platinum Card&reg; or U.S. Business Platinum Card&reg; Accounts who make a prepaid Airbnb Luxe booking with Airbnb through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel App&trade; can earn up to $250 in statement credits after they or any Additional Card Members on the Card Account use their Card to make eligible Airbnb Experiences purchases. However, the total amount of statement credits for eligible Airbnb Experiences purchases will not exceed $250 per calendar year per Card Account.
+<br><br>
+The Basic Card Member or any Additional Card Member on the Card Account must first use their eligible Card to make one prepaid Airbnb Luxe booking with Airbnb through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel App&trade;. Once their Airbnb Luxe booking is confirmed, they will unlock the $250 Airbnb Experiences Credit starting from the day their booking request was submitted through the end of that calendar year. If the eligible Card Member submits a booking request that is confirmed in the following calendar year, the $250 Airbnb Experiences Credit will be unlocked through the end of that year. To complete an Airbnb Luxe booking with Airbnb through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel App&trade;, the eligible Card Member must have an Airbnb account linked to their American Express online account. After making an Airbnb Luxe booking, Basic Card Members can confirm that the $250 Airbnb Experiences Credit benefit has been unlocked by logging into their American Express online account and checking the Benefits section, receiving a confirmation email from American Express sent to the email associated with their eligible Card Account, or calling the number on the back of their Card. After an Airbnb Luxe booking has been requested, the Airbnb host has 24 hours to accept or decline the request. If the host declines the request or doesn’t respond within 24 hours, the booking status will be updated as “Declined” or “Expired,” and the $250 Airbnb Experiences Credit benefit will remain locked. If the booking is confirmed, please call the number on the back of the Card if the benefit has not been unlocked 72 hours after the Airbnb Luxe booking confirmation.
+<br><br>
+After the benefit is unlocked on the Card Account, to receive the statement credits, by De&zwnj;cember 3&zwnj;1st of the same calendar year as the Airbnb Luxe booking confirmation, the Basic Card Member or any Additional Card Member on the Card Account must make eligible Airbnb Experience purchases, which include only Airbnb Experiences sold directly by Airbnb at <a href="https://www.airbnb.ca/experiences" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>www.airbnb.com/experiences</u></a> or through the Experiences tab within the Airbnb app. Other purchases from Airbnb are not eligible. Certain Experience bookings direct you from Airbnb to a third-party partner platform to make the purchase (for example, live event tickets) and are not eligible.
+<br><br>
+At least one qualifying Airbnb Luxe booking must be made with an eligible Card and confirmed by Airbnb by De&zwnj;cember&nbsp;3&zwnj;1st and the booking must not be cancelled for the benefit to remain unlocked on that Card Account for that calendar year. Statement credits may not be received or may be reversed if the qualifying Airbnb Luxe booking is cancelled at any time for any reason. If multiple qualifying Airbnb Luxe bookings are  confirmed in the same calendar year, at least one qualifying Airbnb Luxe booking must not be cancelled to keep the benefit unlocked and the Card Account eligible to earn up to $250 in statement credits for eligible Airbnb Experiences purchases made through De&zwnj;cember&nbsp;3&zwnj;1st of the same calendar year as the Airbnb Luxe booking confirmation.
+<br><br>
+If all qualifying Airbnb Luxe bookings are cancelled for any reason, the benefit will no longer be considered unlocked and any statement credits previously received may be reversed. To unlock the benefit again in the same calendar year, the eligible Card Member must make another prepaid Airbnb Luxe booking with Airbnb through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel App&trade; which is confirmed by Airbnb by December 31st of that year. Any Airbnb Experiences purchases made prior to the benefit regaining unlocked status will not be eligible for statement credits. Once an eligible Card Account is confirmed to have unlocked the benefit again, a new, eligible Airbnb Experience must be purchased and charged to the same Card Account to receive any statement credits in that calendar year, up to $250 per calendar year per Card Account. If an eligible Card  Member transfers to a different Card, they will lose access to the benefit that was unlocked on their former Card.
+<br><br>
+Please allow up to 8 weeks after an eligible purchase is charged to the Card Account for statement credit(s) to be posted to the Account. Please call the number on the back of the Card if statement credits have not posted after 8 weeks from the date an eligible purchase is charged to the Card Account. American Express relies on the merchant’s processing of transactions to determine the transaction date. If there is a delay in the merchant submitting the transaction to us or if the merchant uses another date as the transaction date, then the purchase may not earn the statement credit benefit for the benefit period in which the Card Member made the purchase. For example, if an Airbnb Experiences purchase is made on De&zwnj;cember 3&zwnj;1st, but the merchant processes the transaction such that it is identified to us as occurring on January 1st, the purchase will not be eligible for the prior year’s statement credit. If the Card Member has transferred to a different Card at the time the merchant submits the transaction, they may not receive the statement credit. Statement credit(s) may not be received or may be reversed if all qualifying Airbnb Luxe bookings or eligible Airbnb Experiences purchases are refunded, cancelled, or modified for any reason.
+<br><br>
+American Express also relies on information provided to us by the merchant to identify eligible purchases. If American Express does not receive information that identifies the transaction as eligible for this benefit, the Basic Card Member will not receive the statement credit. Basic Card Members may not receive the statement credit if we receive inaccurate information or are otherwise unable to identify the purchase as eligible, if a transaction is made with an electronic wallet or through a third party (such as an app store), or if the merchant uses a mobile or wireless card reader to process it. For example, an Airbnb Experiences purchase will not be eligible if (i) the qualifying Airbnb Luxe booking is never confirmed (ii) it is made in a different calendar year from the confirmation of the qualifying Airbnb Luxe booking, (iii) it is made after the qualifying Airbnb Luxe booking has been cancelled (if no other qualifying Airbnb Luxe booking is maintained), (iv) it is purchased anywhere other than directly through <a href="https://www.airbnb.com/" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>Airbnb.com</u></a> or the Airbnb app, or (v) it is charged to an ineligible Card Account. Available Airbnb Experiences are subject to change, and Airbnb availability is not controlled by American Express. All use of Airbnb’s website and purchases from Airbnb are subject to Airbnb’s Terms of Service at <a href="https://www.airbnb.com/help/article/2908" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>www.airbnb.com/help/article/2908</u></a>, which are subject to change and American Express has no control over those changes.
+<br><br>
+If the Card Account is cancelled or past due at the time of statement credit fulfillment, it may not qualify to receive a statement credit. If American Express, in its sole discretion, determines that a Card Member has engaged in or intend to engage in any manner of abuse, misuse, or gaming in connection with this benefit, American Express will not have an obligation to provide statement credits and may reverse any statement credits provided to them. If a charge for an eligible purchase is included in a Pay Over Time balance on the Card Account, the statement credit associated with that charge may not be applied to that Pay Over Time balance. Instead, the statement credit may be applied to their Pay In Full balance. For additional information, Card Members may call the number on the back of their eligible Card.
+</p>
+<br>
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">Airbnb</h3>
+<p style=" margin: 0;">Short-Term Rental Bookings with Airbnb: Airbnb Luxe and other Airbnb property bookings must be made with Airbnb through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel AppTM (“Airbnb Booking”). Airbnb Bookings must be prepaid in full by a Card Member (including an Additional Card Member) with their U.S. Consumer or Business Card and that Card Member must be staying at the booked property. If any issues arise when attempting to use an American Express Card to pay for an Airbnb Booking (including additional fees or charges resulting from modifying an Airbnb Booking), or if a Card Member does not receive an Airbnb Booking confirmation for a Request to Book property (including a host decline or failure by host to confirm a Request to Book), Card Members should call the number on the back of the Card for assistance before taking any further steps to complete an initial or additional booking, or modify existing bookings, as applicable. Failure to do so may affect eligibility for applicable American Express Card benefits. If an Airbnb Booking is hosted at or affiliated with a hotel, Card Members may not receive hotel loyalty program benefits, elite status recognition or other related hotel benefits. Card Members may not be able to apply credits, one-off promotional codes, coupons, gift cards, or similar discounts, including one-off discounts provided by Airbnb hosts, to an Airbnb Booking. Airbnb Bookings are subject to applicable Airbnb and host terms, conditions and policies (“Airbnb Terms”), available at
+<a href="https://www.airbnb.com/help/article/2908" style="text-decoration: underline; color: #005DAE;display: inline;"><u>https://www.airbnb.com/help/article/2908</u></a>, including but not limited to security deposit requirements, minimum lengths of stay and booking modification, cancellation and refund policies. Airbnb hosts may charge additional fees in connection with an Airbnb Booking for the use of certain optional services; Card Members should review the property description and/or contact the host for more information. The maximum length of stay of an Airbnb Booking is 27 consecutive nights. Select Airbnb properties are available through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel AppTM and the availability of Airbnb properties is subject to change. Hosts may require Card Members to complete additional steps after booking, such as signing a rental agreement or other steps described in a property listing.
+<br><br>
+Airbnb – and not American Express – manages the relationship with each host and is responsible for managing Airbnb Bookings with the host. Any communications, modifications, cancellations, complaints or other issues related to an Airbnb Booking must be made through Airbnb and not through <a href="https://www.americanexpress.com/en-us/travel" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>AmexTravel.com</u></a> or the Amex Travel AppTM. The Card Member and their guests must use the property only for lawful purposes and the purposes for which the booking was made, and at all times in accordance with all applicable Airbnb Terms. American Express is not liable for the acts or omissions of Airbnb or hosts, or third parties acting for or on behalf of Airbnb or hosts. For Airbnb Bookings, Airbnb – and not American Express – operates as the short-term, hosting, vacation rental or similar booking service or platform. American Express does not collect taxes or remit taxes to applicable tax authorities.
+<br><br>
+Card Members must link their American Express online account to an Airbnb account before completing an Airbnb Booking. The Airbnb account must be in the same name as the Card Member associated with the linked American Express online account. Only one Airbnb account may be linked at a time to one American Express online account. By linking an Airbnb account, you understand and agree that Airbnb will share applicable account and reservation information with American Express to support your booking experience and eligible benefits. American Express may also share information with Airbnb as necessary to administer Airbnb Bookings. After linking an Airbnb account, you will be able to view Airbnb Bookings from your American Express online account. To disconnect an Airbnb account, go to your Airbnb Profile > Privacy > Connected Services. If you disconnect or delete your linked Airbnb account, you must link your Airbnb account prior to making additional Airbnb Bookings. However, you will still be able to view information related to existing Airbnb Bookings. American Express may change or discontinue the ability to link an Airbnb account or modify the Airbnb information displayed in your American Express online account, at any time in our discretion.
+<br><br>
+For additional information, Card Members can call the number on the back of their Card.
+</p>
+<br>
+
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">American Express&reg; ZO Membership from Tishman Speyer</h3>
+<p style=" margin: 0;">
+Benefit enrollment is not required, however, access requirements apply - see below. This benefit is available to U.S. Corporate Platinum Card&reg; Members, U.S. Corporate Centurion&reg; Members, U.S. Basic Business Platinum Card&reg; and U.S. Basic Business Centurion&reg; Members, and holders of Additional Business Centurion Cards, Employee Business Platinum Cards on a Business Centurion Account, and Employee Business Expense Cards on Business Centurion Accounts (each such holder, an “Eligible Card Member” and each such card an “Eligible Card”). The American Express&reg; ZO Membership from Tishman Speyer benefit provides Eligible Card Members unlimited complimentary access for themselves (and up to four (4) guest day passes per week) to all participating U.S. ZO Clubhouse and ZO Lounge locations (participating U.S. Clubhouse and Lounge locations are collectively referred to in these terms as, “ZO” or “ZO locations”), up to four (4) day pass reservations with desk space at any participating U.S. Studio location (participating U.S. Studio locations are referred to in these terms as “Studio”) per month, and up to $500 in statement credits per Eligible Card Account each calendar year toward event space bookings at ZO or Studio locations and/or the purchase of a Dining Club membership.
+<br><br>
+ZO and Studio locations are owned and operated by Tishman Speyer Properties, L.L.C. or its subsidiaries and affiliates (collectively, “Tishman Speyer”). All access is subject to space availability and rules and conditions set by Tishman Speyer. American Express does not guarantee access to any specific location, date or time. Participating locations are subject to change. International locations are excluded. Current U.S. locations are found in the ZO App or at <a href="https://app.findyourzo.com" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>https://app.findyourzo.com</u></a>. Amenities vary among locations and are subject to change. Card Members will not be compensated for changes in locations, rates, rules and conditions, amenities or otherwise. Card Members and guests are responsible for any purchases made at a ZO or Studio location. American Express does not own, operate, or control ZO or Studio locations and is not responsible for the acts or omissions of Tishman Speyer or its contractors or agents. American Express and Tishman Speyer are not liable for lost or stolen items or for any injury, damages, or losses suffered by Card Members or guests at ZO or Studio locations.
+<br><br>
+Use of ZO and Studio locations is subject to all rules and conditions set by Tishman Speyer. Please see
+<a href="https://findyourzo.com/terms-of-use/" style="text-decoration: underline; color: #005DAE;display: inline;"><u>https://findyourzo.com/terms-of-use/</u></a> and
+<a href="https://yourstudio.com/documents/rules-and-regulations" style="text-decoration: underline; color: #005DAE;display: inline;"><u>https://yourstudio.com/&zwnj;documents/&zwnj;rules-and-regulations</u></a> for additional details. Any site-specific rules and conditions will be posted onsite at each location. Tishman Speyer reserves the right to deny access or remove any person for inappropriate behavior or failure to adhere to rules and conditions, including, but not limited to conduct that is disruptive, abusive, or violent. Card Members are responsible for the conduct of their guests. All visitors must comply with applicable age requirements and local laws. Must be 21 years of age or older to consume alcoholic beverages. Please drink responsibly.
+<br><br>
+Subject to compliance with the benefit terms and conditions, Eligible Card Members will maintain access to the American Express&reg; ZO Membership benefit as long as they remain an Eligible Card Member or until American Express notifies the Eligible Card Member that the benefit is terminated. The American Express&reg; ZO Membership benefit (and its components, including access and guest passes) is non-transferrable and may only be used by the Eligible Card Member. If American Express determines, in its sole discretion, that an Eligible Card Member or their guests have engaged in misuse, abuse, or gaming of this benefit, or have attempted to do so, American Express may revoke or limit access to the American Express&reg; ZO Membership benefit and take additional action as permitted under the Card Member Agreement.
+</p>
+<br>
+<h4 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">ZO Access</h4>
+<p style=" margin: 0;">
+Eligible Card Members are encouraged to register for a ZO Global Access Membership Account and make a reservation at a ZO location through the ZO App or online at
+<a href="https://app.findyourzo.com" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>https://app.findyourzo.com</u></a>. For entry to ZO locations, Eligible Card Members must present a valid Eligible Card and a valid photo I.D. A reservation confirmation QR code is also required and the name on the QR code, ID and Eligible Card must match. If a reservation is made through the ZO App or online, the QR code will be sent to the Eligible Card Member's email. If the Eligible Card Member arrives without a reservation, the front desk staff at the building will assist them in creating a QR code for their visit, subject to availability. Failure to present required documentation may result in denied access.
+<br><br>
+Each Eligible Card Member may redeem up to four (4) guest day passes per week at ZO locations at no additional charge. A week is considered to be a single business week consisting of Monday through Friday. In order to use guest passes, the Eligible Card Member will be required to create a ZO Global Access Membership Account. All guests must be registered by the Eligible Card Member through the ZO App or online. Once registered, guests will receive a QR code to their email address. Guests must be accompanied by the Eligible Card Member and must present a valid photo I.D. and the QR code for entry. The name on the QR code and the photo I.D. must match. Unused guest passes do not carry over to subsequent weeks and expire at the local closing time of the applicable location on Friday of each week. Guest pass availability resets at the start of the week on Monday. Tishman Speyer reserves the right to limit or deny guest access based on capacity considerations.
+</p>
+<br>
+<h4 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">Studio Access</h4>
+<p style=" margin: 0;">
+For access to U.S. Studio locations, Eligible Card Members must have a ZO Global Access Membership Account and make a reservation in advance through the ZO App or online. To enter a U.S. Studio location, Eligible Card Members must present a reservation confirmation QR code, along with their Eligible Card and a valid photo I.D. The name on the QR code, ID and Eligible Card must match. If the Eligible Card Member arrives without a reservation or a ZO Global Access Membership account, the front desk staff at the building will assist them in creating their ZO Global Access Membership Account and creating a reservation, subject to availability. Failure to present required documentation may result in denied access. Studio day pass reservations are limited to one location per use.
+</p>
+<br>
+<h4 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">Statement Credit – Business Platinum and Business Centurion</h4>
+<p style=" margin: 0;">Statement credits are issued to the Basic Card Member's Eligible Card Account and are limited to a total of $500 per calendar year. To receive the credit, eligible purchases must be charged to an Eligible Card Account for event space bookings with participating ZO or Studio locations in the U.S. and/or toward a Dining Club membership. Eligible purchases include event space bookings purchased directly at
+<a href="https://yourstudio.com/" style="text-decoration: underline; color: #005DAE;display: inline;"><u>www.yourstudio.com</u></a> or in the ZO App and purchases of a Dining Club membership made directly with a membership representative after inquiring for a Dining Club membership at
+<a href="https://www.diningclubrockcenter.com/" style="text-decoration: underline; color: #005DAE;display: inline;"><u>www.diningclubrockcenter.com</u></a>. To book event space at ZO you must have a ZO Global Access Membership Account. Purchases by both the Basic Card Member and any Employee Card Members on the Eligible Card Account are eligible for statement credits. However, the total amount of statement credits for eligible purchases will not exceed $500 per calendar year, per Eligible Card Account. Employee Cards are not eligible for a separate statement credit. Please allow up to 8 weeks after an eligible purchase is charged to your Eligible Card Account for statement credit(s) to be posted to the Eligible Card Account.
+<br><br>
+American Express relies on the merchant's processing of transactions to determine the transaction date. If there is a delay in the merchant submitting the transaction to us or if the merchant uses another date as the transaction date, then your purchase may not earn the statement credit for the benefit period in which you made the purchase. For example, if a qualifying transaction is made on December 31st but the merchant processes the transaction such that it is identified to American Express as occurring on January 1st, then the statement credit available in the next calendar year will be applied.
+<br><br>
+American Express also relies on information provided to us by the merchant to identify qualifying purchases. If American Express does not receive information that identifies your transaction as eligible, the Basic Card Member will not receive the statement credits. Basic Card Members may not receive the statement credit if we receive inaccurate information or are otherwise unable to identify your purchase as eligible, if a transaction is made with an electronic wallet or through a third party (such as an app store), or if the merchant uses a mobile or wireless card reader to process it. If you have transferred to a different Card at the time the merchant submits the transaction, you may not receive the statement credits. Statement credit(s) may not be received or may be reversed if the purchase is refunded, cancelled, or modified. If the Eligible Card Account is cancelled or past due, it may not qualify to receive a statement credit. If American Express, in its sole discretion, determines that you have engaged in or intend to engage in any manner of abuse, misuse, or gaming in connection with this benefit, American Express will not have an obligation to provide and may reverse any statement credits provided to you. If a charge for an eligible purchase is included in a Pay Over Time balance on your Eligible Card Account, the statement credit associated with that charge may not be applied to that Pay Over Time balance. Instead, the statement credit may be applied to your Pay In Full balance.
+</p>
+<br>
+<h4 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">Statement Credit – Corporate Platinum and Corporate Centurion</h4>
+<p style=" margin: 0;">
+Statement credits are issued to the Eligible Card Account and are limited to a total of $500 per calendar year. To receive the credit, eligible purchases must be charged to an Eligible Card for event space bookings with participating ZO or Studio locations in the U.S. and/or toward a Dining Club membership. Eligible purchases include event space bookings purchased directly at <a href="https://yourstudio.com/" style="text-decoration: underline; color: #005DAE;display: inline;"><u>www.yourstudio.com</u></a> or in the ZO App and purchases of a Dining Club membership made directly with a membership representative after inquiring for a Dining Club membership at <a href="https://www.diningclubrockcenter.com/" style="text-decoration: underline; color: #005DAE;display: inline;"><u>www.diningclubrockcenter.com</u></a>. To book event space at ZO you must have a ZO Global Access Membership Account. The total amount of statement credits for eligible purchases will not exceed $500 per calendar year, per Eligible Card Account. Please allow up to 8 weeks after an eligible purchase is charged to your Eligible Card Account for statement credit(s) to be posted to the Eligible Card Account.
+<br><br>
+American Express relies on the merchant's processing of transactions to determine the transaction date. If there is a delay in the merchant submitting the transaction to us or if the merchant uses another date as the transaction date, then your purchase may not earn the statement credit for the benefit period in which you made the purchase. For example, if a qualifying transaction is made on December 31st but the merchant processes the transaction such that it is identified to American Express as occurring on January 1st, then the statement credit available in the next calendar year will be applied.
+<br><br>
+American Express also relies on information provided to us by the merchant to identify qualifying purchases. If American Express does not receive information that identifies your transaction as eligible, the Eligible Card Account will not receive the statement credits. The Eligible Card Account may not receive the statement credit if we receive inaccurate information or are otherwise unable to identify your purchase as eligible, if a transaction is made with an electronic wallet or through a third party (such as an app store), or if the merchant uses a mobile or wireless card reader to process it. If you have transferred to a different Card at the time the merchant submits the transaction, you may not receive the statement credits. Statement credit(s) may not be received or may be reversed if the purchase is refunded, cancelled, or modified. If the Eligible Card Account is cancelled or past due, it may not qualify to receive a statement credit. If American Express, in its sole discretion, determines that you have engaged in or intend to engage in any manner of abuse, misuse, or gaming in connection with this benefit, American Express will not have an obligation to provide and may reverse any statement credits provided to you.
+</p>
+<br>
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">Membership Rewards&reg; Program</h3>
+<p style=" margin: 0;">
+Terms and Conditions for the Membership Rewards&reg; program apply. Visit
+<a href="http://membershiprewards.com/terms" style="text-decoration: underline; color: #005DAE;display: inline;"><u>membershiprewards.com/terms</u></a> for more information. Participating partners and available rewards are subject to change without notice.
+<br><br>
+The value of Membership Rewards points varies according to how you choose to use them. To learn more, go to
+<a href="https://global.americanexpress.com/rewards/calculator" style="text-decoration: underline; color: #005DAE;display: inline;"><u>www.membershiprewards.com/pointsinfo</u></a>.
+</p>
+<br>
+<!-- START TERMS : DELL STATEMENT CREDIT -->
+<!-- %%[IF @SourceCode=="A0000J04AJ" THEN]%% -->
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">Business Platinum Dell Technologies Benefit</h3>
+<p style=" margin: 0;">Benefit enrollment required. Only the Basic Card Member or Authorized Account Manager(s) on a Business Platinum Card&reg; Account can enroll the Card Account in the benefit. Eligible purchases must be charged to the enrolled Card Account for the benefit to apply. Purchases by both the enrolled Basic Card Member and Employee Card Members on the enrolled Card Account are eligible to contribute towards the qualifying spend threshold for statement credits. Each Card Account is eligible for up to $1,150 in statement credits across all Cards on the enrolled Card Account per calendar year. Each Card Account can receive up to $150 in statement credits for eligible purchases with Dell Technologies and an additional $1,000 statement credit after $5,000 in eligible purchases with Dell Technologies are charged to the enrolled Card Account within a calendar year. Valid only on purchases made directly with Dell Technologies or at <a href="https://www.dell.com/en-ca" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>dell.com</u></a> in the U.S. and U.S. territories where Dell Technologies is the merchant of record for the purchases. Not valid on online purchases shipped outside of the U.S. and U.S. territories, purchases from unauthorized resellers or online auctioneers. Certain purchases may require enrollment in Dell subscription plans that are subject to auto-renewal. If you purchase a subscription plan, Dell will charge you the then-applicable subscription fee and any applicable taxes on your subscription renewal date until cancelled. For more information about Dell’s cancellation requirements and deadlines, please visit Dell Customer Support. For the up to $150 in statement credits, please allow 6-8 weeks after an eligible purchase is charged to the Card Account for the statement credit(s) to be posted to the Account. For the spend $5,000, get $1,000 statement credit, please allow 6-8 weeks after an eligible purchase, which causes the enrolled Card Account to meet the qualifying spend threshold, is charged to the Card Account for the statement credit to be posted to the Account. Please call the number on the back of the Card if the statement credits have not posted after 8 weeks from the date of eligible purchases. If there is a delay in the merchant submitting the transaction to us or if the merchant uses another date as the transaction date, then the purchase may not contribute toward the statement credit benefit for the benefit period in which the purchase was made. If the Card Member has transferred to a different Card at the time the merchant submits the transaction, the Card Member may not receive the statement credit(s). American Express relies on accurate transaction data from the merchant to identify eligible purchases. Note that American Express may not receive information about an eligible purchase from the merchant until all items from an eligible purchase have been provided/shipped by the merchant. In this case, a purchase would apply toward the statement credit(s) available in the next benefit period. Purchases may fall outside of the benefit period in which the purchase was made in some cases due to a delay in the merchant submitting transactions to us. For the up to $150 in statement credits, the statement credit(s) may be reversed if an eligible purchase is returned, refunded, cancelled or modified. For the spend $5,000, get $1,000 statement credit, the statement credit may be reversed if an eligible purchase, is returned, refunded, cancelled or modified, causing the enrolled Card Account to no longer meet the qualifying spend threshold. Statement credits for eligible purchases, or any reversals, may be applied to either the Pay in Full balance or the Pay Over Time balance regardless of where the eligible purchases originally posted. If American Express does not receive information that identifies a transaction as eligible for the benefit, the statement credit will not be received. For example, a transaction will not be eligible if it is not made directly with the merchant. In addition, in most cases, the statement credit may not be received if a transaction is made with an electronic wallet or through a third party or if the merchant uses a mobile or wireless card reader to process it. To be eligible for this benefit, the Card Account must not be cancelled or past due at the time of statement credit fulfillment. For additional information, call the number on the back of your Card.
+</p>
+<br>
+<!-- END TERMS : DELL STATEMENT CREDIT -->
+<!-- START TERMS : INDEED STATEMENT CREDIT -->
+<!-- %%[ELSEIF @SourceCode=="A0000J04AF" THEN]%% -->
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">Business Platinum Indeed Benefit</h3>
+<p style=" margin: 0;">Only the Basic Card Member or Authorized Account Manager(s) on a Business Platinum Card&reg; Account can enroll the Card Account in the benefit. Eligible purchases must be charged to the enrolled Card Account for the benefit to apply. Purchases by both the enrolled Basic Card Member and Employee Card Members on the enrolled Card Account are eligible for statement credits. However, each Card Account is only eligible for up to $90 USD in statement credits per quarter for a total of $360 USD per calendar year in statement credits across all Cards on the enrolled Card Account. Each quarterly eligibility period is defined as January to March, April to June, July to September, October to December. Valid only on purchases made directly with <a href="https://ca.indeed.com/" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>Indeed.com</u></a> in the U.S. and U.S. territories where Indeed, Inc. is the merchant of record for the purchase. Certain purchases may require enrollment in Indeed subscription plans that are subject to auto-renewal. If you purchase a subscription plan, Indeed will charge you the then-applicable subscription fee and any applicable taxes on your subscription renewal date until cancelled. For more information about Indeed’s cancellation requirements and deadlines, please visit Indeed’s Employer Help Center online. Please allow up to 8 weeks after an eligible purchase is charged to the enrolled Card Account for statement credit(s) to be posted to the Account. Please call the number on the back of the Card if statement credits have not posted after 8 weeks from the date of purchase. American Express relies on the merchant’s processing of transactions to determine the transaction date. If there is a delay in the merchant submitting the transaction to us or if the merchant uses another date as the transaction date, then your purchase may not earn the statement credit benefit for the benefit period in which you made the purchase. For example, if an eligible purchase is made on December 31st but the merchant processes the transaction such that it is identified to us as occurring on January 1st, the first quarter statement credit would be applied if available. If you have transferred to a different Card at the time the merchant submits the transaction, you may not receive the statement credit. Statement credit(s) may not be received or may be reversed if an eligible purchase is returned, refunded, cancelled, or modified. Statement credits for eligible purchases, or any reversals, may be applied to either the Pay in Full balance or the Pay Over Time balance regardless of where the eligible purchases originally posted. If American Express does not receive information that identifies your transaction as eligible for the benefit, you will not receive the statement credit. For example, your transaction will not be eligible if it is not made directly with Indeed, Inc. In addition, in most cases, you may not receive the statement credit if your transaction is made with an electronic wallet or through a third party or if Indeed, Inc. uses a mobile or wireless card reader to process it. To be eligible for this benefit, Card Account(s) must not be cancelled and not past due at the time of statement credits fulfillment. For additional information, call the number on the back of your Card. Use of Indeed’s services and websites are subject to Indeed’s Terms of Service, Cookie Policy, and Privacy Policy available at
+<a href="https://www.indeed.com/legal" style="text-decoration: underline; color: #005DAE;display: inline;"><u>www.indeed.com/legal</u></a>.
+</p>
+<br>
+<!-- END TERMS : INDEED STATEMENT CREDIT  -->
+<!-- START TERMS : WIRELESS CREDIT -->
+<!-- %%[ELSEIF @SourceCode=="A0000J04AK" THEN]%% -->
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">Wireless Credit</h3>
+<p style=" margin: 0;">Effective February 17, 2027, eligible purchases for monthly wireless telephone service charges made directly from a wireless telephone service provider located in the U.S. and U.S. Territories will be limited to purchases made directly with Verizon, AT&T, T-Mobile, Frontier, Comcast, Charter, Spectrum Mobile, UScellular, Optimum, Ultra Mobile, and Mint Mobile.
+<br><br>
+Only the Basic Card Member or Authorized Account Manager(s) on a Business Platinum Card&reg; Account can enroll the Card Account in the benefit. Eligible purchases must be charged to the enrolled Card Account for the benefit to apply. Purchases by both the enrolled Basic Card Member and Employee Card Members on the enrolled Card Account are eligible for statement credits. However, each Card Account is only eligible for up to $10 in statement credits per month. Valid only on purchases for monthly wireless telephone service charges made directly from a wireless telephone service provider in the United States and U.S. Territories. Purchases for hardware and equipment are NOT included. Any purchases from Google Fi, third parties, authorized retailers or resellers are excluded. Bundled services offered by Wireless companies for TV, Internet and VoIP (Voice Over Internet Protocol) services are excluded. Eligible purchases are purchases for goods and services minus returns and other credits. Eligible purchases do NOT include fees or interest charges, purchases of travelers checks, purchases or reloading of prepaid cards, or purchases of other cash equivalents. For more details on eligible purchases and exclusions, please go to
+<a href="https://www.americanexpress.com/en-us/benefits/rewards/rewards-information/index.html" style="text-decoration: underline; color: #005DAE;display: inline;"><u>americanexpress.com/&zwnj;rewards-info</u></a>. Additional terms and restrictions apply. Please allow up to 8 weeks after an eligible purchase is charged to the enrolled Card Account for statement credit(s) to be posted to the Account. Please call the number on the back of the Card if statement credits have not posted after 8 weeks from the date of purchase. American Express relies on the merchant’s processing of transactions to determine the transaction date. If there is a delay in the merchant submitting the transaction to us or if the merchant uses another date as the transaction date, then your purchase may not earn the statement credit benefit for the benefit period in which you made the purchase. For example, if an eligible purchase is made on December 31st but the merchant processes the transaction such that it is identified to us as occurring on January 1st, the January statement credit would be applied if available. If you have transferred to a different Card at the time the merchant submits the transaction, you may not receive the statement credit. Merchants are assigned codes based on what they primarily sell. A purchase will not earn statement credits if the merchant's code is not eligible. If American Express does not receive information that identifies your transaction as eligible for the statement credit, you will not receive the statement credit. For example, your transaction will not be eligible if it is not made directly with the merchant. Purchases made through a third-party payment account or on an online marketplace (with multiple retailers) will not earn statement credit. A purchase may not earn statement credit if the merchant submits the purchase using a mobile or wireless card reader or if you use a mobile or digital wallet. Note that American Express may not receive information about your eligible purchase from a merchant until all items from your eligible purchase have been provided/shipped by the merchant. Statement credits may not be received or may be reversed if an eligible purchase is returned, refunded, cancelled, or modified. Statement credits for eligible purchases, or any reversals, may be applied to either the Pay in Full balance or the Pay Over Time balance regardless of where the eligible purchases originally posted. To be eligible for this statement credit, Card Account(s) must be not cancelled and not past due at the time of statement credits fulfillment. For additional information, call the number on the back of your Card.
+</p>
+<br>
+<!-- END TERMS : WIRELESS CREDIT  -->
+<!-- START TERMS : ADOBE CREDIT -->
+<!-- %%[ELSEIF @SourceCode=="A0000J04AH" THEN]%% -->
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">Business Platinum Adobe Benefit</h3>
+<p style=" margin: 0;">Benefit enrollment required. Only the Basic Card Member or Authorized Account Manager(s) on a Business Platinum Card&reg; Account can enroll the Card Account in the benefit. Eligible purchases must be charged to the enrolled Card Account for the benefit to apply. Purchases minus returns and other credits by both the enrolled Basic Card Member and Employee Card Members on the enrolled Card Account are eligible to contribute towards the qualifying spend threshold for the statement credit. Each Card Account is eligible for a $250 statement credit per calendar year once $600 in eligible purchases with Adobe are charged to the enrolled Card Account. If an annual prepaid plan is purchased, it will automatically renew each year on the annual subscription date until cancelled. Valid only on purchases made directly with Adobe or at <a href="https://www.adobe.com/" style="text-decoration: underline; color: #005DAE;display: inline-block;"><u>adobe.com</u></a> in the U.S. and U.S. territories where Adobe is the merchant of record for the purchase. Certain purchases may require enrollment in Adobe subscription plans that are subject to auto-renewal. If you purchase a subscription plan, Adobe will charge you the then-applicable subscription fee and any applicable taxes on your subscription renewal date until cancelled. For more information about Adobe’s cancellation requirements and deadlines, please visit Adobe Customer Support. Please allow 6-8 weeks after an eligible purchase, which causes the enrolled Card Account to meet the qualifying spend threshold, is charged to the Card Account for the statement credit to be posted to the Account. Please call the number on the back of the Card if the statement credit has not posted after 8 weeks from the date an eligible purchase, which causes the enrolled Card Account to meet the qualifying spend threshold, is charged to the Card Account. If there is a delay in the merchant submitting the transaction to us or if the merchant uses another date as the transaction date, then the purchase may not contribute toward the statement credit benefit for the benefit period in which the purchase was made. If the Card Member has transferred to a different Card at the time the merchant submits the transaction, the Card Member may not receive the statement credit. American Express relies on accurate transaction data from the merchant to identify eligible purchases. Note that American Express may not receive information about the eligible purchase from merchant until all items from the eligible purchase have been provided by the merchant. In this case, a purchase would apply toward the statement credit available in the next benefit period. Purchases may fall outside of the benefit period in which the purchase was made in some cases due to a delay in the merchant submitting transactions to us. The statement credit may be reversed if an eligible purchase is returned, refunded, cancelled or modified, causing the enrolled Card Account to no longer meet the qualifying spend threshold. The statement credit for eligible purchases, or any reversals, may be applied to either the Pay in Full balance or the Pay Over Time balance regardless of where the eligible purchases originally posted. If American Express does not receive information that identifies a transaction as eligible for the benefit, the statement credit will not be received. For example, a transaction will not be eligible if it is not made directly with the merchant. In addition, in most cases, the statement credit may not be received if a transaction is made with an electronic wallet or through a third party or if the merchant uses a mobile or wireless card reader to process it. To be eligible for this benefit, the Card Account must not be cancelled or past due at the time of statement credit fulfillment. For additional information, call the number on the back of your Card.
+</p>
+<br>
+<!-- END TERMS : ADOBE CREDIT  -->
+<!-- START TERMS : CHAT GPT -->
+<!-- %%[ELSEIF @SourceCode=="A0000J04AM" THEN]%% -->
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">$300 ChatGPT Credit</h3>
+<p style=" margin: 0;">Benefit enrollment required. Only the Basic Card Member or Authorized Account Manager(s) on a Business Platinum Card&reg; or Business Gold Card Account can enroll the Card Account in the benefit. Eligible purchases must be charged to the enrolled Card Account for the benefit to apply. Purchases by both the enrolled Basic Card Member and Employee Card Members on the enrolled Card Account are eligible for statement credits. Each Card Account is eligible for up to $300 in statement credits per calendar year. Valid only on purchases of ChatGPT Business made directly with OpenAI in the U.S. and U.S. territories where OpenAI is the merchant of record for the purchase. If ChatGPT Business is renamed, rebranded, or otherwise designated differently by OpenAI at any time, any such change will not affect eligibility for this benefit. ChatGPT Business purchases are subject to auto-renewal. If you purchase an annual subscription, OpenAI will charge you the then-applicable subscription fee and any applicable taxes each year on your annual subscription renewal date until cancelled. If you purchase a monthly subscription, OpenAI will charge you the then-applicable subscription fee and any applicable taxes each month on your monthly subscription renewal date until cancelled. For more information about OpenAI’s cancellation requirements and deadlines, please visit the OpenAI Help Center. Please allow up to 8 weeks after an eligible purchase is charged to the Card Account for statement credit(s) to be posted to the Account. Please call the number on the back of the Card if statement credit(s) has (have) not posted after 8 weeks from the date an eligible purchase is charged to the Card Account. If there is a delay in the merchant submitting the transaction to us or if the merchant uses another date as the transaction date, then the purchase may not contribute toward the statement credit benefit for the benefit period in which the purchase was made. If the Card Member has transferred to a different Card at the time the merchant submits the transaction, the Card Member may not receive the statement credit. American Express relies on accurate transaction data from the merchant to identify eligible purchases. Note that American Express may not receive information about the eligible purchase from the merchant until all items from the eligible purchase have been provided by the merchant. In this case, a purchase would apply toward the statement credit available in the next benefit period. Purchases may fall outside of the benefit period in which the purchase was made in some cases due to a delay in the merchant submitting transactions to us. The statement credit may be reversed if an eligible purchase is returned, refunded, cancelled or modified. The statement credit for eligible purchases, or any reversals, may be applied to either the Pay in Full balance or the Pay Over Time balance regardless of where the eligible purchases originally posted. If American Express does not receive information that identifies a transaction as eligible for the benefit, the statement credit will not be received. For example, a transaction will not be eligible if it is not made directly with the merchant. In addition, in most cases, the statement credit may not be received if a transaction is made with an electronic wallet or through a third party or if the merchant uses a mobile or wireless card reader to process it. To be eligible for this benefit, the Card Account must not be cancelled or past due at the time of statement credit fulfillment. For additional information, call the number on the back of the Card.
+</p>
+<br>
+<!-- %%[ENDIF]%% -->
+<!-- END TERMS : CHAT GPT -->
+<p style=" margin: 0;">
+American Express Travel Related Services Company, Inc. is acting solely as a sales agent for travel suppliers and is not responsible for the actions or inactions of such suppliers. Certain suppliers pay us commission and other incentives for reaching sales targets or other goals and may provide incentives to our Travel Consultants. For more information visit <a href="https://www.americanexpress.com/travelterms" style="text-decoration: underline; color: #005DAE;display: inline;"><u>www.americanexpress.com/&zwnj;travelterms</u></a>.
+<br><br>
+California CST#1022318; Washington UBI#600-469-694
+</p>
+<br>
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">American Express Virtual Card</h3>
+<p style=" margin: 0;">
+American Express&reg; Virtual Cards are available on eligible U.S. Business or Corporate Accounts through American Express or third-party Virtual Card solutions for approved users. Enrollment and features vary by solution. Terms apply and fees may apply for third-party solutions.
+</p>
+<br>
+<!-- START TERMS : EARNED TRAVEL VALUE -->
+<!-- %%[IF @SourceCode=="A0000J04AE" OR @SourceCode=="A0000J04AN" THEN]%% -->
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold;">American Express One AP&reg; Statement Credit</h3>
+<p style=" margin: 0;">
+Basic Card Members on a U.S. Graphite&trade; Business Cash Unlimited Card Account (“Card Account”) who make $250,000 in eligible purchases in a calendar year (“$250,000 Purchase Requirement”) are eligible to receive up to $2,400 in statement credits on their Graphite&trade; Business Cash Unlimited Card Account in the following calendar year when they use their Card Account to pay for American Express One AP&reg; fees between January 1 and December 31 of the following calendar year (“Active Credit Window”). A Card Account that has satisfied the $250,000 Purchase Requirement is considered a “Qualified Card Account”. Card Members must separately request and be approved for a One AP account in order to use the service, and the Company that is responsible for One AP fees must be the same as the Company associated with the Card Account.
+<br><br>
+An eligible Card Member’s One AP statement credits will be applied to their Card Account billing statement against any (i) then-applicable platform access fees, (ii) applicable transaction fees associated with their One AP usage, and/or (iii) applicable taxes, in each case as charged to the Qualified Card Account. The platform access fee will automatically renew each month, unless the service is cancelled or all additional payment method are deactivated, as applicable. To learn more about One AP’s cancellation deadlines and requirements, please see the One AP terms and conditions below. One AP bills in arrears, meaning in order to utilize the full $2,400 One AP Credit in any Active Credit Window, you may need to incur One AP fees charged to your Qualified Card Account in December of the year in which you first meet the $250,000 Purchase Requirement. Each Card Account may only earn a total of $2,400 in credits per calendar year. Enrollment in the statement credit on your American Express Online Account is not required for the One AP Credit; however, you must request and be approved for a One AP account, and the Qualified Card Account must be the account to which your One AP fees are billed. If you need to change the Card being billed, you must call 1-8&zwnj;44-&zwnj;35&zwnj;8-40&zwnj;25. See
+<a href="https://www.americanexpress.com/oneap-getstarted" style="text-decoration: underline; color: #005DAE;display: inline;"><u>https://www.americanexpress.com/&zwnj;oneap-getstarted</u></a> to learn more and find out how to request a One AP account. American Express One AP&reg; ACH may not be available to all customers.
+<br><br>
+Eligible purchases to meet the $250,000 Purchase Requirement are purchases for goods and services minus returns and other credits. Eligible purchases do NOT include fees or interest charges, cash advances, purchases of travelers checks, purchases or reloading of prepaid cards, purchases of gift cards, person-to-person payments, or other cash equivalents. Non-card transactions (check, ACH) are not eligible purchases. Eligible purchases made by any Employee Card Members on the Graphite&trade; Business Cash Unlimited Card Account will contribute to the $250,000 Purchase Requirement. Card Members can track their progress towards the current year $250,000 Purchase Requirement in the Benefits tab of their online Card Account and in the American Express App. Your status tracker will reflect your posted transactions, net of returns, up to the $250,000 mark.
+<br><br>
+Statement credits are typically reflected on your Card Account within a few days of the corresponding charge posting; however, it may take 90 days after an eligible transaction is charged to the Card Account for the statement credits to be reflected on your Card Account. Statement credits may not be received or may be reversed if the One AP fee is refunded. If the Card Account is cancelled or past due, it may not qualify to receive a statement credit. If American Express does not receive information that identifies your transaction as eligible, you will not receive the statement credits. For example, your transaction will not be eligible if One AP fees are billed to a card other than your Qualified Card Account. If American Express, in its sole discretion, determines that you have engaged in or intend to engage in any manner of abuse, misuse, or gaming in connection with this benefit, American Express will not have an obligation to provide, and may reverse, any statement credits provided to you. If a charge for an eligible purchase is included in a Pay Over Time balance on your Card Account, the statement credit associated with that charge may not be applied to that Pay Over Time balance. Instead, the statement credit may be applied to your Pay In Full balance.
+</p>
+<br>
+<!-- %%[ENDIF]%% -->
+<!-- END TERMS : EARNED TRAVEL VALUE -->
+<p style=" margin: 0;">
+%%=ContentBlockByName("Shared Content\Templates\2022_v4.0\HTML_physical_address_copyright")=%%
+</p>
+<br>
+</td>
+</tr>
+</table>
+<!--END: FM04-v4.0 Terms and Conditions -->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>
